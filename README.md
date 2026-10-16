@@ -1,21 +1,75 @@
-# Official provider status on Better Stack
+# Official provider status feed
 
-Read official provider status feeds and synchronize native rows in the existing
-Better Stack **Providers** section. Python's standard library is the only runtime
+Read official provider status feeds and publish a public JSON snapshot for
+`https://www.respan.ai/llm-status`. Python's standard library is the only runtime
 dependency. No Supabase, database, inference calls, or paid monitoring service is
-required.
+required. Better Stack synchronization remains optional during the transition.
 
 ## Data flow
 
 1. A public GitHub Actions workflow runs about every five minutes.
 2. `providers.py` fetches current status from official JSON endpoints, selecting
    API/model components where a provider also reports consumer applications.
-3. `betterstack.py` creates or reconciles only rows managed by this integration
-   in the Providers section of the configured status page.
-4. Degradation and recovery become native Better Stack status reports and
-   updates. Subscriber notifications are explicitly disabled.
-5. Non-secret reconciliation state is committed to a separate `state` branch.
+3. `snapshot.py` builds `public-status.json`, preserving current unknowns, source
+   links, expiry times and bounded daily observations from the previous snapshot.
+4. `persist_state.py` publishes this file to the public repository's `state`
+   branch before any optional Better Stack work. Source failures are published
+   as unknown and then fail the availability check for enabled adapters.
+5. When enabled, `betterstack.py` also reconciles its managed Providers rows and
+   preserves separate reconciliation state. Subscriber notifications are disabled.
    There are no Actions artifact or cache uploads.
+
+## Public snapshot
+
+After the first publication, the landing page can fetch without credentials:
+
+<https://raw.githubusercontent.com/respanai/provider-status/state/public-status.json>
+
+The snapshot has `schema_version: 1`, `generated_at`, `expires_at`,
+`stale_after_seconds: 900`, and a `providers` array. Each provider contains:
+
+```json
+{
+  "id": "example",
+  "name": "Example API",
+  "state": "unknown",
+  "enabled": true,
+  "observed_at": "2026-10-16T12:00:00+00:00",
+  "expires_at": "2026-10-16T12:15:00+00:00",
+  "source_url": "https://status.example.com/",
+  "detail": "Official status source unavailable or timed out",
+  "last_confirmed_state": "operational",
+  "last_confirmed_at": "2026-10-16T11:55:00+00:00",
+  "history": [{"date": "2026-10-16", "state": "unknown", "uptime": null}]
+}
+```
+
+Known states are `operational`, `degraded`, `downtime` and `maintenance`. A failed
+or unsupported source is `unknown`. An already expired known observation is
+`stale`. The consumer must also compare its current time with both provider and
+snapshot `expires_at`: a known badge becomes stale when either expires, even if
+the scheduled collector stops. Unknown remains unknown. Last-confirmed fields
+provide context and must never replace an unknown or stale badge with green.
+`enabled: false` identifies an expected coverage gap.
+
+History contains the worst status observed on each UTC day in the last 90 calendar
+days. Unobserved days remain absent, and every `uptime` is null. Unknown observations
+cannot erase a degradation or downtime already observed that day; recovery also
+retains the day's observed degradation. An unknown observation changes a previously
+healthy daily entry to unknown. These are daily status observations, not continuous
+uptime measurements, incident onset times, or a backfilled uptime record. The landing
+page may retain its 90-day bar layout by rendering absent days as unobserved.
+
+## Stop Better Stack writes after landing launch
+
+Set the GitHub Actions repository variable `BETTERSTACK_SYNC_ENABLED` to `false`
+after the landing page is verified against the published snapshot. This skips
+Better Stack configuration validation and synchronization while preserving the
+same five-minute collection, public snapshot publication and availability checks.
+No Better Stack token is required in this mode. Existing Better Stack resources
+and reconciliation state are retained; this switch does not delete or alter them.
+Unset or any value other than the exact string `false` preserves the existing
+Better Stack integration during the transition.
 
 The current theme, section layout, status badges, and responsive behavior remain
 under Better Stack's control. Providers initially use the native **Current status
@@ -42,7 +96,9 @@ Before enabling the workflow:
 1. Publish this collector to the reviewed public repository.
 2. Initialize a `state` branch containing `state.json` copied from
    `state.example.json` (update its page ID when targeting another page).
-3. Add the numeric status page ID as the Actions variable
+3. For the public landing feed alone, set `BETTERSTACK_SYNC_ENABLED=false`.
+   The remaining Better Stack configuration is required only when that integration
+   is enabled. Add the numeric status page ID as the Actions variable
    `BETTERSTACK_STATUS_PAGE_ID` (Respan's existing page: `176303`).
 4. Store a Respan-team Better Stack Incidents API token, preferably dedicated, as the encrypted
    Actions secret `BETTERSTACK_API_TOKEN`. Do not commit it or put it in a public
@@ -61,6 +117,8 @@ pull requests or expose secrets to forked pull requests.
 ```sh
 python3 -m unittest discover -s tests -v
 python3 providers.py --output observations.json
+python3 snapshot.py --input observations.json --previous public-status.json --output public-status.json
+python3 providers.py --check observations.json
 python3 betterstack.py --input observations.json --state state.json --page-id 176303 --offline
 ```
 
@@ -89,8 +147,9 @@ python3 betterstack.py --input observations.json --state state.json --page-id 17
   integration skips maintenance observations without those times.
 - History begins when valid observations are synchronized. The collector does not
   invent previous uptime or import unsupported historical estimates.
-- Public state includes provider observations and Better Stack resource/report
-  IDs only. Credentials and request headers must never appear there.
+- The public snapshot includes provider observations, source URLs and daily status
+  observations only. Separate reconciliation state may include Better Stack
+  resource/report IDs. Credentials and request headers must never appear in either.
 
 The source registry retains unsupported providers so gaps are explicit. A provider
 with an official status website may still need a current-state adapter; a published

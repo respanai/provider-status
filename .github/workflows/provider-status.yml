@@ -28,7 +28,19 @@ jobs:
           ref: state
           path: sync-state
           persist-credentials: false
-      - name: Validate integration configuration
+      - name: Test feed parsing and publication
+        run: python3 -m unittest discover -s tests -v
+      - name: Read official provider feeds
+        id: collect
+        run: python3 providers.py --output observations.json
+      - name: Build public landing-page snapshot
+        run: python3 snapshot.py --input observations.json --previous sync-state/public-status.json --output sync-state/public-status.json
+      - name: Publish public landing-page snapshot
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 persist_state.py --state sync-state/public-status.json --remote-path public-status.json
+      - name: Validate optional Better Stack integration
+        if: vars.BETTERSTACK_SYNC_ENABLED != 'false'
         env:
           BETTERSTACK_API_TOKEN: ${{ secrets.BETTERSTACK_API_TOKEN }}
           BETTERSTACK_STATUS_PAGE_ID: ${{ vars.BETTERSTACK_STATUS_PAGE_ID }}
@@ -41,11 +53,8 @@ jobs:
           if not page.isdigit():
               raise SystemExit('Configure the numeric BETTERSTACK_STATUS_PAGE_ID Actions variable.')
           PY
-      - name: Test feed parsing and synchronization
-        run: python3 -m unittest discover -s tests -v
-      - name: Read official provider feeds
-        run: python3 providers.py --output observations.json
       - name: Synchronize native Better Stack rows
+        if: vars.BETTERSTACK_SYNC_ENABLED != 'false'
         id: synchronize
         env:
           BETTERSTACK_API_TOKEN: ${{ secrets.BETTERSTACK_API_TOKEN }}
@@ -57,5 +66,5 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: python3 persist_state.py --state sync-state/state.json
       - name: Verify configured feed availability
-        if: always() && steps.synchronize.outcome == 'success'
+        if: always() && steps.collect.outcome == 'success'
         run: python3 providers.py --check observations.json
