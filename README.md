@@ -80,8 +80,11 @@ python3 betterstack.py --input observations.json --state state.json --page-id 17
 - Unsupported formats, failed requests, unrecognized schemas, and paused source
   monitors produce `unknown`. Empty RSS feeds do not establish current health.
 - Unknown observations do not create rows or resolve incidents. Existing managed
-  rows retain their last confirmed state and an explanation of the unavailable
-  observation. Better Stack manual resources have no writable Unknown badge.
+  rows display **(status unavailable)** in their name, retain their last confirmed
+  badge, and explain the last successful observation. Better Stack manual resources
+  have no writable Unknown badge. The name returns to normal after a verified feed
+  recovery. Unexpected failures of enabled feeds fail the workflow after the other
+  providers have synchronized and reconciliation state has been preserved.
 - Native maintenance reports require authoritative start and end times. The
   integration skips maintenance observations without those times.
 - History begins when valid observations are synchronized. The collector does not

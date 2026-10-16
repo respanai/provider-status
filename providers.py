@@ -146,12 +146,17 @@ def _incident_proxy(data, row):
     if not isinstance(structure, list) or not isinstance(summary.get("components"), list):
         raise SourceError("Missing status-page structure")
     selected = []
+    matched_groups = set()
     for item in structure:
         group = item.get("group", {})
         if _matches(group.get("name", ""), row.get("group_pattern")) and not group.get("hidden"):
             if not isinstance(group.get("components"), list):
                 raise SourceError("Invalid API group components")
+            matched_groups.add(str(group.get("name", "")).casefold())
             selected.extend(x for x in group["components"] if not x.get("hidden"))
+    required_groups = {str(name).casefold() for name in row.get("required_groups", [])}
+    if required_groups - matched_groups:
+        raise SourceError("One or more configured API groups are missing")
     known_ids = {x.get("id") for x in summary["components"]}
     if any(not isinstance(x, dict) or not x.get("component_id") or not x.get("status")
            for x in summary["affected_components"]):
@@ -330,14 +335,56 @@ def collect_providers(config=None, timeout: float = 12, workers: int = 8) -> lis
         return list(pool.map(lambda row: collect_provider(row, timeout), rows))
 
 
+def check_observations(config, observations) -> list[dict]:
+    """Report unexpected missing/unknown results for enabled adapters only."""
+    rows = config["providers"] if isinstance(config, dict) else config
+    if not isinstance(observations, list) or not all(isinstance(x, dict) for x in observations):
+        raise ValueError("Observations must be a list of provider objects")
+    by_id = {}
+    for observation in observations:
+        id = observation.get("id")
+        if not isinstance(id, str) or id in by_id:
+            raise ValueError("Observation IDs must be present and unique")
+        by_id[id] = observation
+    failures = []
+    for row in rows:
+        if row.get("adapter") == "unavailable":
+            continue
+        observation = by_id.get(row["id"])
+        if observation is None:
+            detail = "No observation was produced"
+        elif observation.get("state") in {"operational", "degraded", "downtime", "maintenance"}:
+            continue
+        else:
+            detail = str(observation.get("detail") or "Unknown or invalid current state")
+        failures.append({"id": row["id"], "name": row["name"], "detail": detail[:400]})
+    return failures
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", default=str(DEFAULT_CONFIG))
     parser.add_argument("--output", help="Save normalized JSON (otherwise stdout)")
+    parser.add_argument("--check", metavar="OBSERVATIONS_JSON",
+                        help="Check saved observations for unknown enabled providers; no network")
     parser.add_argument("--timeout", type=float, default=12)
     parser.add_argument("--workers", type=int, default=8)
     args = parser.parse_args()
-    results = collect_providers(load_config(args.config), args.timeout, args.workers)
+    config = load_config(args.config)
+    if args.check:
+        try:
+            failures = check_observations(config, json.loads(Path(args.check).read_text()))
+        except (OSError, ValueError, TypeError, KeyError):
+            print("Status availability check failed: invalid observations file")
+            raise SystemExit(1)
+        if failures:
+            print(f"Status unavailable for {len(failures)} enabled provider(s):")
+            for failure in failures:
+                print(f"- {failure['name']}: {failure['detail']}")
+            raise SystemExit(1)
+        print("Status available for every enabled provider")
+        return
+    results = collect_providers(config, args.timeout, args.workers)
     output = json.dumps(results, indent=2) + "\n"
     if args.output:
         destination = Path(args.output)

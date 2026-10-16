@@ -173,7 +173,21 @@ class ReconcileTests(unittest.TestCase):
         self.assertEqual(len(new), 1)
         self.assertEqual(new[0][0], "PATCH")
         self.assertIn("Current provider status unavailable", new[0][2]["explanation"])
+        self.assertEqual(new[0][2]["public_name"], "OpenAI (status unavailable)")
         self.assertEqual(store.data["providers"]["openai"]["last_state"], "downtime")
+
+    def test_unavailable_label_is_restored_on_verified_recovery_without_duplicate_rows(self):
+        client, store = FakeClient(), bs.StateStore()
+        run(client, store, [observation("degraded")])
+        run(client, store, [observation("unknown", detail="Fetch failed")])
+        run(client, store, [observation("unknown", detail="Still unavailable")])
+        self.assertEqual(client.resources[0]["attributes"]["public_name"], "OpenAI (status unavailable)")
+        self.assertEqual(len(client.reports), 1)
+        output = run(client, store, [observation()])
+        self.assertFalse(output["errors"])
+        self.assertEqual(len(client.resources), 1)
+        self.assertEqual(client.resources[0]["attributes"]["public_name"], "OpenAI")
+        self.assertEqual(client.reports[0]["attributes"]["aggregate_state"], "resolved")
 
     def test_unknown_without_public_source_is_skipped(self):
         client = FakeClient()

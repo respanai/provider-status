@@ -20,12 +20,16 @@
       "name": "Cohere",
       "status_url": "https://status.cohere.com/",
       "official_url": null,
-      "adapter": "statuspage",
-      "url": "https://status.cohere.com/api/v2/summary.json",
-      "all_components": true,
-      "exclude_pattern": "website|dashboard|console",
-      "scope": "Cohere endpoints and models",
-      "verified_on": "2026-10-16"
+      "adapter": "incident_proxy",
+      "url": "https://status.cohere.com/proxy/status.cohere.com",
+      "scope": "Cohere Endpoints and Models",
+      "verified_on": "2026-10-16",
+      "group_pattern": "^(Endpoints|Models)$",
+      "required_groups": [
+        "Endpoints",
+        "Models"
+      ],
+      "note": "Official group membership excludes Docs, Playground, Infrastructure and Website."
     },
     {
       "id": "ai21_labs",
@@ -328,13 +332,15 @@
       "name": "Chutes",
       "status_url": "https://status.chutes.ai/",
       "official_url": null,
-      "adapter": "betterstack",
+      "adapter": "unavailable",
       "url": "https://status.chutes.ai/index.json",
       "names": [
         "API Heartbeat"
       ],
       "scope": "Chutes API Heartbeat",
-      "verified_on": "2026-10-16"
+      "verified_on": "2026-10-16",
+      "unavailable_reason": "Official API Heartbeat is not_monitored; no authoritative current API state is available",
+      "note": "Verified index.json explicitly marks API Heartbeat not_monitored. This expected coverage gap is excluded from collector availability checks."
     },
     {
       "id": "friendliai",

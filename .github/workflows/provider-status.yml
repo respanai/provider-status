@@ -56,3 +56,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: python3 persist_state.py --state sync-state/state.json
+      - name: Verify configured feed availability
+        if: always() && steps.synchronize.outcome == 'success'
+        run: python3 providers.py --check observations.json
