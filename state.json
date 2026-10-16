@@ -2,43 +2,175 @@
   "page_id": "176303",
   "pending": {},
   "providers": {
-    "ai21_labs": {},
-    "anthropic": {},
+    "ai21_labs": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:17Z",
+      "resource_id": "9030904",
+      "source_url": "https://status.ai21.com/api/v2/summary.json"
+    },
+    "anthropic": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:16Z",
+      "resource_id": "9030905",
+      "source_url": "https://status.claude.com/api/v2/summary.json"
+    },
     "azure_deepseek": {},
     "azure_foundry": {},
     "azure_openai": {},
-    "baseten": {},
+    "baseten": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:17Z",
+      "resource_id": "9030916",
+      "source_url": "https://status.baseten.co/api/v2/summary.json"
+    },
     "bedrock": {},
-    "cerebras": {},
+    "cerebras": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:17Z",
+      "resource_id": "9030914",
+      "source_url": "https://status.cerebras.ai/api/v2/summary.json"
+    },
     "chutes": {},
-    "cohere": {},
-    "deepinfra": {},
+    "cohere": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:17Z",
+      "resource_id": "9030903",
+      "source_url": "https://status.cohere.com/api/v2/summary.json"
+    },
+    "deepinfra": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:19Z",
+      "resource_id": "9030912",
+      "source_url": "https://status.deepinfra.com/api/v1/status"
+    },
     "deepseek": {},
     "featherless": {},
-    "fireworks": {},
-    "friendliai": {},
+    "fireworks": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:17Z",
+      "resource_id": "9030911",
+      "source_url": "https://status.fireworks.ai/proxy/status.fireworks.ai"
+    },
+    "friendliai": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:17Z",
+      "resource_id": "9030919",
+      "source_url": "https://status.friendli.ai/v3/components.json"
+    },
     "google_gemini_ai": {},
     "google_vertex_ai": {},
-    "groq": {},
-    "inference_net": {},
-    "ionet": {},
-    "isoquant": {},
-    "makora": {},
-    "minimax": {},
-    "mistral": {},
-    "moonshot": {},
-    "morphllm": {},
-    "nebius": {},
-    "novita": {},
-    "openai": {},
-    "openrouter": {},
+    "groq": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:17Z",
+      "resource_id": "9030908",
+      "source_url": "https://groqstatus.com/api/v2/summary.json"
+    },
+    "inference_net": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:17Z",
+      "resource_id": "9030918",
+      "source_url": "https://status.inference.net/api/v2/summary.json"
+    },
+    "ionet": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:18Z",
+      "resource_id": "9030922",
+      "source_url": "https://status.io.net/index.json"
+    },
+    "isoquant": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:18Z",
+      "resource_id": "9030926",
+      "source_url": "https://statuspage.incident.io/isoquant/api/v2/summary.json"
+    },
+    "makora": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:18Z",
+      "resource_id": "9030923",
+      "source_url": "https://status.makora.com/api/v2/summary.json"
+    },
+    "minimax": {
+      "last_state": "degraded",
+      "last_success_at": "2026-10-16T10:30:17Z",
+      "report_id": "1091996",
+      "resource_id": "9030921",
+      "source_url": "https://status.minimax.io/api/v2/summary.json"
+    },
+    "mistral": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:17Z",
+      "resource_id": "9030906",
+      "source_url": "https://status.mistral.ai/api/v1/status.json"
+    },
+    "moonshot": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:17Z",
+      "resource_id": "9030917",
+      "source_url": "https://status.moonshot.cn/api/v2/summary.json"
+    },
+    "morphllm": {
+      "last_state": "degraded",
+      "last_success_at": "2026-10-16T10:30:17Z",
+      "report_id": "1091995",
+      "resource_id": "9030920",
+      "source_url": "https://status.morphllm.com/api/v2/summary.json"
+    },
+    "nebius": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:17Z",
+      "resource_id": "9030913",
+      "source_url": "https://status.nebius.com/api/v2/summary.json"
+    },
+    "novita": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:17Z",
+      "resource_id": "9030915",
+      "source_url": "https://status.novita.ai/index.json"
+    },
+    "openai": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:17Z",
+      "resource_id": "9030902",
+      "source_url": "https://status.openai.com/proxy/status.openai.com"
+    },
+    "openrouter": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:17Z",
+      "resource_id": "9030907",
+      "source_url": "https://status.openrouter.ai/config.json"
+    },
     "parasail": {},
-    "perplexity": {},
-    "prism": {},
-    "relace": {},
+    "perplexity": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:17Z",
+      "resource_id": "9030910",
+      "source_url": "https://status.perplexity.com/api/v2/summary.json"
+    },
+    "prism": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:18Z",
+      "resource_id": "9030927",
+      "source_url": "https://status.prisminference.com/api/v2/summary.json"
+    },
+    "relace": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:18Z",
+      "resource_id": "9030924",
+      "source_url": "https://status.relace.ai/index.json"
+    },
     "replicate": {},
-    "togetherai": {},
-    "typesafe": {},
+    "togetherai": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:17Z",
+      "resource_id": "9030909",
+      "source_url": "https://status.together.ai/index.json"
+    },
+    "typesafe": {
+      "last_state": "operational",
+      "last_success_at": "2026-10-16T10:30:18Z",
+      "resource_id": "9030925",
+      "source_url": "https://status.typesafe.ai/index.json"
+    },
     "xai": {}
   },
   "schema_version": 1
