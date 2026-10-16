@@ -17,9 +17,12 @@ required.
 5. Non-secret reconciliation state is committed to a separate `state` branch.
    There are no Actions artifact or cache uploads.
 
-The current theme, section layout, history widget, and responsive behavior remain
-under Better Stack's control. Existing Platform and Enterprise resources are not
-managed by this integration.
+The current theme, section layout, status badges, and responsive behavior remain
+under Better Stack's control. Providers initially use the native **Current status
+only** widget: Better Stack pads new manual history rows with green days before
+tracking began, which would imply an unverified 90-day uptime record. Native
+reports still retain real observations for a future history display. Existing
+Platform and Enterprise resources are not managed by this integration.
 
 ## Free deployment
 

@@ -239,7 +239,7 @@ def parse_source(data, row) -> tuple[str, str]:
 def collect_provider(row: dict, timeout: float = 12, fetcher=None) -> dict:
     result = {"id": row["id"], "name": row["name"], "state": "unknown",
               "observed_at": utc_now(),
-              "source_url": row.get("url") or row.get("status_url") or row.get("official_url"),
+              "source_url": row.get("status_url") or row.get("url") or row.get("official_url"),
               "detail": row.get("unavailable_reason", "No verified current-state source")}
     if row.get("adapter") not in ADAPTERS:
         return result

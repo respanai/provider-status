@@ -25,6 +25,7 @@ import urllib.request
 BASE_URL = "https://incidents.betterstack.com/api/v2"
 PAGE_ID = "176303"
 SECTION_NAME = "Providers"
+PROVIDER_WIDGET = "plain"  # Native history pads unobserved pre-creation days green.
 STATES = {"operational", "degraded", "downtime", "maintenance", "unknown"}
 RESERVED_NAMES = {"platform", "enterprise"}
 
@@ -256,7 +257,8 @@ class Reconciler:
         elif kind == "explanation":
             matches = [item for item in self._list("/resources")
                        if str(item.get("id")) == operation["path"].split("/")[-1]
-                       and attributes(item).get("explanation") == body["explanation"]]
+                       and attributes(item).get("explanation") == body["explanation"]
+                       and ("widget_type" not in body or attributes(item).get("widget_type") == body["widget_type"])]
         elif kind == "report":
             for report in self._list("/status-reports"):
                 attr = attributes(report)
@@ -431,12 +433,14 @@ class Reconciler:
                 # The live API requires omission: explicit null returns
                 # HTTP 422 {"resource": ["can't be blank"]}.
                 "resource_type": "ManuallyTrackedItem",
-                "public_name": provider["name"], "explanation": explanation, "widget_type": "history"})["data"]
+                "public_name": provider["name"], "explanation": explanation, "widget_type": PROVIDER_WIDGET})["data"]
             self.resources.append(item)
         rid = str(item["id"])
         prior["resource_id"] = rid
-        if attributes(item).get("explanation") != explanation:
-            self._write(pid, "explanation", "PATCH", f"/resources/{rid}", {"explanation": explanation})
+        if (attributes(item).get("explanation") != explanation
+                or attributes(item).get("widget_type") != PROVIDER_WIDGET):
+            self._write(pid, "explanation", "PATCH", f"/resources/{rid}",
+                        {"explanation": explanation, "widget_type": PROVIDER_WIDGET})
         if provider["state"] == "unknown":
             self.warnings.append(f"{pid}: source unavailable; native row retains its last known badge, explanation marked unavailable")
             if self.apply:

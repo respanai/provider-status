@@ -96,6 +96,17 @@ class ReconcileTests(unittest.TestCase):
         self.assertFalse(output['errors'])
         body = next(body for method, path, body in client.writes if path.endswith('/resources'))
         self.assertNotIn('resource_id', body)
+        self.assertEqual(body['widget_type'], 'plain')
+
+    def test_unobserved_history_widget_is_replaced_with_native_current_status(self):
+        client = FakeClient()
+        existing = resource()
+        existing['attributes']['widget_type'] = 'history'
+        client.resources.append(existing)
+        output = run(client, bs.StateStore(), [observation()])
+        self.assertFalse(output['errors'])
+        self.assertEqual(client.resources[0]['attributes']['widget_type'], 'plain')
+        self.assertFalse(client.reports)
 
     def test_validation_error_stops_batch_after_one_rejection(self):
         client = FakeClient()
