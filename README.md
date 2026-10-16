@@ -128,6 +128,31 @@ pull requests or expose secrets to forked pull requests.
 
 ## Local checks
 
+### Published historical records
+
+The landing page can preserve a separately dated export of the daily bars
+published by official provider status pages. This is independent of current
+polling and never supplies a current badge or an estimated uptime percentage.
+Export the reviewed public graphs with:
+
+```sh
+python3 export_history.py --output official-history-review.json
+```
+
+Review each provider's selected API scope, dates, source links and historical
+component-ID continuity before importing the output into the landing archive.
+Padded dates before tracking began, `not_monitored` days, missing selected
+components, and incomplete windows stay unknown or absent. Rounded aggregate
+uptime and empty incident feeds cannot fill daily records. Source outages do
+not change the current-status collector's behavior.
+
+The landing page only lists providers whose merged published and collected
+records cover all 90 displayed dates with known states. Archived Respan records
+retain their separate provenance. Providers with incomplete history are excluded
+until their record supports the full window.
+
+### Collector checks
+
 ```sh
 python3 -m unittest discover -s tests -v
 python3 providers.py --output observations.json
