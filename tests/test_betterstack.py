@@ -90,6 +90,20 @@ def run(client, state, values, apply=True, **kwargs):
 
 
 class ReconcileTests(unittest.TestCase):
+    def test_manual_resource_omits_null_resource_id(self):
+        client = FakeClient()
+        output = run(client, bs.StateStore(), [observation()])
+        self.assertFalse(output['errors'])
+        body = next(body for method, path, body in client.writes if path.endswith('/resources'))
+        self.assertNotIn('resource_id', body)
+
+    def test_validation_error_stops_batch_after_one_rejection(self):
+        client = FakeClient()
+        with patch.object(client, 'request', side_effect=bs.ApiError('Validation failed', status_code=422)) as request:
+            output = run(client, bs.StateStore(), [observation(), observation(id='cohere', name='Cohere')])
+        self.assertEqual(request.call_count, 1)
+        self.assertEqual(len(output['errors']), 1)
+
     def test_dry_run_never_writes_or_persists(self):
         client = FakeClient(sections=False)
         store = bs.StateStore()

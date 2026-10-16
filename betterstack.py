@@ -34,7 +34,9 @@ class SyncError(Exception):
 
 
 class ApiError(SyncError):
-    pass
+    def __init__(self, message: str, status_code: int | None = None):
+        super().__init__(message)
+        self.status_code = status_code
 
 
 class AmbiguousMutation(ApiError):
@@ -154,7 +156,7 @@ class BetterStackClient:
         except urllib.error.HTTPError as exc:
             # Never log response bodies: they can contain account metadata.
             error_type = AmbiguousMutation if write and (exc.code >= 500 or exc.code == 408) else ApiError
-            raise error_type(f"Better Stack {method} {safe_path} returned HTTP {exc.code}") from None
+            raise error_type(f"Better Stack {method} {safe_path} returned HTTP {exc.code}", status_code=exc.code) from None
         except (urllib.error.URLError, OSError, ValueError) as exc:
             error_type = AmbiguousMutation if write else ApiError
             raise error_type(f"Better Stack {method} {safe_path} returned no usable response") from None
@@ -426,7 +428,9 @@ class Reconciler:
         if item is None:
             item = self._write(pid, "resource", "POST", "/resources", {
                 "status_page_section_id": int(section_id) if section_id.isdigit() else section_id,
-                "resource_type": "ManuallyTrackedItem", "resource_id": None,
+                # The live API requires omission: explicit null returns
+                # HTTP 422 {"resource": ["can't be blank"]}.
+                "resource_type": "ManuallyTrackedItem",
                 "public_name": provider["name"], "explanation": explanation, "widget_type": "history"})["data"]
             self.resources.append(item)
         rid = str(item["id"])
@@ -478,6 +482,10 @@ class Reconciler:
                     self._provider(provider, section_id)
                 except SyncError as exc:
                     self.errors.append({"provider_id": provider["id"], "error": str(exc)})
+                    if isinstance(exc, ApiError) and exc.status_code in {401, 403, 422}:
+                        # Authentication and validation errors require a fix;
+                        # do not repeat the same rejected request for every row.
+                        break
         else:
             for provider in providers:
                 self.actions.append({"provider_id": provider["id"], "operation": "skip-unknown", "status": "skipped"})

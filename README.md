@@ -41,7 +41,7 @@ Before enabling the workflow:
    `state.example.json` (update its page ID when targeting another page).
 3. Add the numeric status page ID as the Actions variable
    `BETTERSTACK_STATUS_PAGE_ID` (Respan's existing page: `176303`).
-4. Store a dedicated Respan-team Better Stack Incidents API token as the encrypted
+4. Store a Respan-team Better Stack Incidents API token, preferably dedicated, as the encrypted
    Actions secret `BETTERSTACK_API_TOKEN`. Do not commit it or put it in a public
    repository variable. Token creation and storage require account-owner approval.
 5. Run **Sync official provider status** manually, verify the published page, then
