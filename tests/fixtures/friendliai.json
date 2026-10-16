@@ -1,0 +1,52 @@
+{
+  "components": [
+    {
+      "id": "cm83wttfc001q7ati8yf7a592",
+      "name": "FriendliAI Website",
+      "status": "OPERATIONAL",
+      "group": null
+    },
+    {
+      "id": "cm848y9yk002hpbs5tzvii4i8",
+      "name": "Homepage",
+      "status": "OPERATIONAL",
+      "group": {
+        "id": "cm83wttfc001q7ati8yf7a592",
+        "name": "FriendliAI Website",
+        "description": ""
+      }
+    },
+    {
+      "id": "cm84901mt00202ytovproy2ob",
+      "name": "Model APIs",
+      "status": "OPERATIONAL",
+      "group": null
+    },
+    {
+      "id": "cm84906l0002jpbs5pjpw8bxi",
+      "name": "Dedicated Endpoints",
+      "status": "OPERATIONAL",
+      "group": null
+    },
+    {
+      "id": "cm8490fa7009ljcqzx88543b8",
+      "name": "Endpoints Inference",
+      "status": "OPERATIONAL",
+      "group": {
+        "id": "cm84901mt00202ytovproy2ob",
+        "name": "Model APIs",
+        "description": ""
+      }
+    },
+    {
+      "id": "cm8490p6u009njcqznulfru84",
+      "name": "Endpoints Inference",
+      "status": "OPERATIONAL",
+      "group": {
+        "id": "cm84906l0002jpbs5pjpw8bxi",
+        "name": "Dedicated Endpoints",
+        "description": ""
+      }
+    }
+  ]
+}

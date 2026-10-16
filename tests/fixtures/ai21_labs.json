@@ -1,0 +1,95 @@
+{
+  "components": [
+    {
+      "id": "n4m6bwm01zl9",
+      "name": "Studio Platform",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    },
+    {
+      "id": "qvtbxbl2ldk6",
+      "name": "Maestro",
+      "status": "operational",
+      "group_id": "x740x1vccwmz",
+      "group": false
+    },
+    {
+      "id": "hpljzjl9dxdc",
+      "name": "Model Requests",
+      "status": "operational",
+      "group_id": "155kbj9xmxqg",
+      "group": false
+    },
+    {
+      "id": "19s661s57ltn",
+      "name": "Jamba Models",
+      "status": "operational",
+      "group_id": null,
+      "group": true
+    },
+    {
+      "id": "n313qpb9pclg",
+      "name": "Maestro Websearch",
+      "status": "operational",
+      "group_id": "x740x1vccwmz",
+      "group": false
+    },
+    {
+      "id": "w96r02dyyryj",
+      "name": "Compressors",
+      "status": "operational",
+      "group_id": "155kbj9xmxqg",
+      "group": false
+    },
+    {
+      "id": "8byw33cwy620",
+      "name": "Maestro Filesearch",
+      "status": "operational",
+      "group_id": "x740x1vccwmz",
+      "group": false
+    },
+    {
+      "id": "sh97k0xbymlk",
+      "name": "Analytics",
+      "status": "operational",
+      "group_id": "155kbj9xmxqg",
+      "group": false
+    },
+    {
+      "id": "gc3zp03ns94g",
+      "name": "Dashboard",
+      "status": "operational",
+      "group_id": "155kbj9xmxqg",
+      "group": false
+    },
+    {
+      "id": "4z5m6gx42hql",
+      "name": "jamba-mini",
+      "status": "operational",
+      "group_id": "19s661s57ltn",
+      "group": false
+    },
+    {
+      "id": "8234pbcjsvt9",
+      "name": "jamba-large",
+      "status": "operational",
+      "group_id": "19s661s57ltn",
+      "group": false
+    },
+    {
+      "id": "x740x1vccwmz",
+      "name": "Maestro",
+      "status": "operational",
+      "group_id": null,
+      "group": true
+    },
+    {
+      "id": "155kbj9xmxqg",
+      "name": "AI21 Gateway",
+      "status": "operational",
+      "group_id": null,
+      "group": true
+    }
+  ]
+}

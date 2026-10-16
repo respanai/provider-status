@@ -1,0 +1,145 @@
+{
+  "data": {
+    "type": "status_page"
+  },
+  "included": [
+    {
+      "id": "259098",
+      "type": "status_page_section",
+      "attributes": {
+        "name": "Relace Models"
+      }
+    },
+    {
+      "id": "259099",
+      "type": "status_page_section",
+      "attributes": {
+        "name": "Open Models"
+      }
+    },
+    {
+      "id": "346471",
+      "type": "status_page_section",
+      "attributes": {
+        "name": "Jacq"
+      }
+    },
+    {
+      "id": "8995330",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 259098,
+        "public_name": "Instant Apply",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8995331",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 259098,
+        "public_name": "Agentic Search",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8995332",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 259098,
+        "public_name": "Compact",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "9013656",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 259099,
+        "public_name": "DeepSeek V4 Flash 0423",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "9018678",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 259099,
+        "public_name": "DeepSeek V4 Pro 0423",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8995334",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 259099,
+        "public_name": "DeepSeek V4 Flash 0731",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "9018679",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 259099,
+        "public_name": "DeepSeek V4 Pro 0813",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "9018685",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 259099,
+        "public_name": "DeepSeek V4.1 Flash",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "9018686",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 259099,
+        "public_name": "GLM 5.2",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "9018687",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 259099,
+        "public_name": "GLM 5.3 Flash",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "9018688",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 259099,
+        "public_name": "GLM 5.3",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "9018689",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 259099,
+        "public_name": "Kimi K3",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8995336",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 346471,
+        "public_name": "Jacq API",
+        "status": "operational"
+      }
+    }
+  ]
+}

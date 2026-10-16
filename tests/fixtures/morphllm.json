@@ -1,0 +1,39 @@
+{
+  "components": [
+    {
+      "id": "01KZ3435MBYBAJJF29KFH0AP3E",
+      "name": "Website",
+      "status": "operational"
+    },
+    {
+      "id": "01KZ3435MB7NVFXFJ3954143DA",
+      "name": "App",
+      "status": "operational"
+    },
+    {
+      "id": "01KZ52E9TNM6YW5RS8WZTP9KZ6",
+      "name": "Compact",
+      "status": "operational"
+    },
+    {
+      "id": "01KZ52E9TN84H3ZR5HTKBBKDPH",
+      "name": "Fast Apply",
+      "status": "degraded_performance"
+    },
+    {
+      "id": "01KZ52E9TNFYE7AV15RM498X4P",
+      "name": "WarpGrep",
+      "status": "operational"
+    },
+    {
+      "id": "01KZ52E9TN6QC5AR7SY804WXA5",
+      "name": "GLM-5.2",
+      "status": "operational"
+    },
+    {
+      "id": "01KZ52E9TNN73XZ2VS7TCZ4KPM",
+      "name": "Kimi K3",
+      "status": "operational"
+    }
+  ]
+}

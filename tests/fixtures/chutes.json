@@ -1,0 +1,39 @@
+{
+  "data": {
+    "type": "status_page"
+  },
+  "included": [
+    {
+      "id": "276105",
+      "type": "status_page_section",
+      "attributes": {
+        "name": "Website"
+      }
+    },
+    {
+      "id": "276106",
+      "type": "status_page_section",
+      "attributes": {
+        "name": "API"
+      }
+    },
+    {
+      "id": "8599282",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 276105,
+        "public_name": "chutes.ai",
+        "status": "not_monitored"
+      }
+    },
+    {
+      "id": "8599285",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 276106,
+        "public_name": "API Heartbeat",
+        "status": "not_monitored"
+      }
+    }
+  ]
+}

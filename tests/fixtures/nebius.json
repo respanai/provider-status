@@ -1,0 +1,1453 @@
+{
+  "components": [
+    {
+      "id": "6wqy5t17368z",
+      "name": "Compute Cloud",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "g389s72ckww8",
+      "name": "EU-NORTH1",
+      "status": "operational",
+      "group_id": null,
+      "group": true
+    },
+    {
+      "id": "57fq0vns6x5g",
+      "name": "Compute Cloud",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "45j1hhhp0s3x",
+      "name": "Compute Cloud",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "k5kvbglzbm3z",
+      "name": "Compute Cloud",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "wyqs119hp9fw",
+      "name": "Compute Cloud",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "g1pxr9zxzn4m",
+      "name": "Compute Cloud",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "ttxt2b6xvyc4",
+      "name": "Compute Cloud",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "cjnbrfh62zgw",
+      "name": "Compute Cloud",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "szvwl07s8wx0",
+      "name": "Compute Cloud",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "t73ttcs0hsc8",
+      "name": "Network Block Storage",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "b7gqc0lkbgn1",
+      "name": "Network Block Storage",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "nhlcp6mlc4pr",
+      "name": "EU-NORTH2",
+      "status": "operational",
+      "group_id": null,
+      "group": true
+    },
+    {
+      "id": "rysx6wtdx3pw",
+      "name": "Network Block Storage",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "xf21x1kgzcvy",
+      "name": "Network Block Storage",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "gs3vwbj2ynp7",
+      "name": "Network Block Storage",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "sm4t4czc9wrm",
+      "name": "Network Block Storage",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "nrc8l9ykzpnd",
+      "name": "Network Block Storage",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "hd77v179bb5v",
+      "name": "Network Block Storage",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "3b58zlw20wmw",
+      "name": "Network Block Storage",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "xs3cbx3hgy51",
+      "name": "Object Storage",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "64nglx0qrzck",
+      "name": "Object Storage",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "7xbr2kz8wc47",
+      "name": "Object Storage",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "ttmw60m8klxk",
+      "name": "EU-WEST1",
+      "status": "operational",
+      "group_id": null,
+      "group": true
+    },
+    {
+      "id": "3kw6wy73fc7n",
+      "name": "Object Storage",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "71gghsml37f2",
+      "name": "Object Storage",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "ymk14sgkgdl7",
+      "name": "Object Storage",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "dnlv4nntrsb0",
+      "name": "Object Storage",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "pxnlv961b3xb",
+      "name": "Object Storage",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "kq2h254d94pg",
+      "name": "Object Storage",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "9kfx7jg4m9r6",
+      "name": "Virtual Private Cloud (Networking)",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "b220w235lhw9",
+      "name": "Virtual Private Cloud (Networking)",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "mb1pnbw8x5hm",
+      "name": "Virtual Private Cloud (Networking)",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "93vjzg10zgxt",
+      "name": "Virtual Private Cloud (Networking)",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "h2lnk6v0pvkg",
+      "name": "Virtual Private Cloud (Networking)",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "7ykmknlzb130",
+      "name": "Virtual Private Cloud (Networking)",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "1r8zj6g4k416",
+      "name": "Virtual Private Cloud (Networking)",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "wjngyggymlwk",
+      "name": "EU-WEST2",
+      "status": "operational",
+      "group_id": null,
+      "group": true
+    },
+    {
+      "id": "92mcb64kzjdl",
+      "name": "Virtual Private Cloud (Networking)",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "y6gvk0nryh4p",
+      "name": "Virtual Private Cloud (Networking)",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "mq2wc3h6cm53",
+      "name": "Managed Service for Kubernetes\u00ae",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "6v5blpwqnqbh",
+      "name": "Managed Service for Kubernetes\u00ae",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "7pkts2xzsp7q",
+      "name": "Managed Service for Kubernetes\u00ae",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "yngt5bptlqqp",
+      "name": "Managed Service for Kubernetes\u00ae",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "mp4009sp6khk",
+      "name": "Managed Service for Kubernetes\u00ae",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "g7bkrqjss6wd",
+      "name": "Managed Service for Kubernetes\u00ae",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "0d1kpmpm6394",
+      "name": "Managed Service for Kubernetes\u00ae",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "fqmbybfkc5jy",
+      "name": "Managed Service for Kubernetes\u00ae",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "jhqrmt3bq578",
+      "name": "Managed Service for Kubernetes\u00ae",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "6j2c54r3kln5",
+      "name": "EU-SOUTH1",
+      "status": "operational",
+      "group_id": null,
+      "group": true
+    },
+    {
+      "id": "b7f3sw471nyv",
+      "name": "Identity and Access Management",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "5sjnnck7j6c5",
+      "name": "Identity and Access Management",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "9j18gdrnwnvy",
+      "name": "Identity and Access Management",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "kjghkj14fjb9",
+      "name": "Identity and Access Management",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "p223tg9l54hc",
+      "name": "Identity and Access Management",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "wp9xhs7hzpxt",
+      "name": "Identity and Access Management",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "qfxmz47dyblv",
+      "name": "UK-SOUTH1",
+      "status": "operational",
+      "group_id": null,
+      "group": true
+    },
+    {
+      "id": "gkswbynn3srm",
+      "name": "Identity and Access Management",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "p00r9n0vt98j",
+      "name": "Identity and Access Management",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "m6bsm89zcpjm",
+      "name": "Identity and Access Management",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "8459nmmmtshw",
+      "name": "Billing",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "3g27tfrd7hjq",
+      "name": "Billing",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "gjy4g1gyb2dc",
+      "name": "Billing",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "s0kqyt5p111t",
+      "name": "Billing",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "t9jynhmym91g",
+      "name": "Billing",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "4jglvmtzflqz",
+      "name": "Billing",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "yqynm1z5hzlv",
+      "name": "Billing",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "v75q359b39gl",
+      "name": "Billing",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "w2rxct24kwdn",
+      "name": "US-NORTH1",
+      "status": "operational",
+      "group_id": null,
+      "group": true
+    },
+    {
+      "id": "lth8skspx4bn",
+      "name": "Billing",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "v2xkdn7gvj93",
+      "name": "API",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "sbhk9670dnwd",
+      "name": "API",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "pdh5565jn9jb",
+      "name": "API",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "cnd3wx5k7kb5",
+      "name": "API",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "xf42kxj03kgc",
+      "name": "US-CENTRAL1",
+      "status": "operational",
+      "group_id": null,
+      "group": true
+    },
+    {
+      "id": "74f2674yhcsy",
+      "name": "API",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "z4nqcbmwmhnh",
+      "name": "API",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "44pdvyg5xg1c",
+      "name": "API",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "29wgsm369drm",
+      "name": "API",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "hlt50nwybv98",
+      "name": "API",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "xq12ysr9nxwm",
+      "name": "Management Console",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "h4mrqx95sxch",
+      "name": "Management Console",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "mq8pbpj2zyj0",
+      "name": "Management Console",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "srzw3f2b011k",
+      "name": "Management Console",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "gjp68prp667z",
+      "name": "Management Console",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "typjs8ttdqqz",
+      "name": "ME-WEST1",
+      "status": "operational",
+      "group_id": null,
+      "group": true
+    },
+    {
+      "id": "rwyp9kkw721z",
+      "name": "Management Console",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "nnm7nn1wn3f2",
+      "name": "Management Console",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "k7lh0r1v5zr5",
+      "name": "Management Console",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "2t2kft166gj6",
+      "name": "Management Console",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "hsssdpq730ts",
+      "name": "Monitoring",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "x1l28l3dbpw4",
+      "name": "Monitoring",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "twg7xs2x19h1",
+      "name": "Monitoring",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "gp4tr41lz0db",
+      "name": "Monitoring",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "xljx435tgqcq",
+      "name": "Monitoring",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "njpyqn62f7wh",
+      "name": "Monitoring",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "9vt9rbn48qgf",
+      "name": "Monitoring",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "y6twtph9vp64",
+      "name": "Monitoring",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "2627z6d16f4t",
+      "name": "Monitoring",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "qr6krdsnd0nm",
+      "name": "Logging",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "k64kw58p10n9",
+      "name": "Logging",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "d2vc6zg4c3wb",
+      "name": "Logging",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "tdk6yxhnwp60",
+      "name": "Logging",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "fdxhf1wyc19c",
+      "name": "Logging",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "k0t6lbrwklml",
+      "name": "Logging",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "m86j4hmnzzby",
+      "name": "Logging",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "1khv0k1y6stl",
+      "name": "Logging",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "qns8d7d9cbfk",
+      "name": "Logging",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "f2v441mdrj1z",
+      "name": "Audit Logs",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "4p0c8t2m5mxk",
+      "name": "Audit Logs",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "mglh0j131knq",
+      "name": "Audit Logs",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "r3r8bccr78jy",
+      "name": "Audit Logs",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "jls6gpntfb98",
+      "name": "Audit Logs",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "413qwckmyhxm",
+      "name": "Audit Logs",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "jpsc2kslqtlx",
+      "name": "Audit Logs",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "351x28vhbj62",
+      "name": "Audit Logs",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "k0y4vrzqdbbq",
+      "name": "Audit Logs",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "21mtr37vdcbm",
+      "name": "Mysterybox",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "tvskgbhgvsd0",
+      "name": "Mysterybox",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "svkgwv26w0rm",
+      "name": "Mysterybox",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "tzjpyplhw95m",
+      "name": "Mysterybox",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "9khr4l88gwht",
+      "name": "Mysterybox",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "lj57r4yd1dcf",
+      "name": "Mysterybox",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "y8rp95jl6m13",
+      "name": "Mysterybox",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "ckc4q07kzhhv",
+      "name": "Mysterybox",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "2f556vck77mh",
+      "name": "Mysterybox",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "4nylfw32p3wy",
+      "name": "Token Factory",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "570wt7jx37ry",
+      "name": "Token Factory",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "4g5f2knq5c84",
+      "name": "Token Factory",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "j509tjxp75bp",
+      "name": "Token Factory",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "6xvksb4qp2yb",
+      "name": "Token Factory",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "t136n984wh1g",
+      "name": "Token Factory",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "n3k9np8p8t3d",
+      "name": "Token Factory",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "xjxrzbnntnbn",
+      "name": "Token Factory",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "hfkl154np9cc",
+      "name": "Token Factory",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "vgz97jcd0wsv",
+      "name": "Managed Service for MLflow",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "pk7yyshysxz7",
+      "name": "Managed Service for MLflow",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "955mskpdkjg4",
+      "name": "Managed Service for MLflow",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "mnn1qxwp4rvx",
+      "name": "Managed Service for MLflow",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "ftc6z4332jjd",
+      "name": "Managed Service for MLflow",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "9nszmlmz35gr",
+      "name": "Managed Service for MLflow",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "dwn3y1jjs4j7",
+      "name": "Managed Service for MLflow",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "vbgd1q2346jp",
+      "name": "Managed Service for MLflow",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "fqxclp5k4l82",
+      "name": "Managed Service for MLflow",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "0hm052wz76pv",
+      "name": "Managed Service for PostgreSQL\u00ae",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "7z78l6zn2yb9",
+      "name": "Managed Service for PostgreSQL\u00ae",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "5z9nvrkfgjps",
+      "name": "Managed Service for PostgreSQL\u00ae",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "ys3dpddttkys",
+      "name": "Managed Service for PostgreSQL\u00ae",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "m6zrrvn48mn7",
+      "name": "Managed Service for PostgreSQL\u00ae",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "7k5m3d5ztvs6",
+      "name": "Managed Service for PostgreSQL\u00ae",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "06nsmlh0dk51",
+      "name": "Managed Service for PostgreSQL\u00ae",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "drn87d9y7yhv",
+      "name": "Managed Service for PostgreSQL\u00ae",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "d2v5vng23tbp",
+      "name": "Managed Service for PostgreSQL\u00ae",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "dbg45m38jw4c",
+      "name": "Container Registry",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "pc1y2d895pyn",
+      "name": "Container Registry",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "gkjf41prw4cy",
+      "name": "Container Registry",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "r0j9cw3gcrhp",
+      "name": "Container Registry",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "hshd44lydm94",
+      "name": "Container Registry",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "qsptt600p9sk",
+      "name": "Container Registry",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "gsy59wdwk8j8",
+      "name": "Container Registry",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "4zbq849czlx4",
+      "name": "Container Registry",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "skr6lm419m4c",
+      "name": "Container Registry",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "zkc41gzbkmxt",
+      "name": "Marketplace",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "dtgx0zrgx6nt",
+      "name": "Marketplace",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "t94k4z7gqh6j",
+      "name": "Marketplace",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "ttrldchmcf99",
+      "name": "Marketplace",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "x3dcv4mrwnz1",
+      "name": "Marketplace",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "g6rvv5rlgf14",
+      "name": "Marketplace",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "m023r8br7xvv",
+      "name": "Marketplace",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "bfjhnql6yq8q",
+      "name": "Marketplace",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "fgbwj6vbjk8m",
+      "name": "Marketplace",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "nz8j75tzffxl",
+      "name": "Standalone Applications",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "b18qxkfxh90k",
+      "name": "Standalone Applications",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "wwgz8swd69xm",
+      "name": "Standalone Applications",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "flhzhp6zscv7",
+      "name": "Standalone Applications",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "f0h8s1gkf9mw",
+      "name": "Standalone Applications",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "rqz2wbd1lssr",
+      "name": "Standalone Applications",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "2b12x9bg5wl6",
+      "name": "Standalone Applications",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "7ttv4tsdp1zq",
+      "name": "Standalone Applications",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "m7x0dpz3nmcb",
+      "name": "Standalone Applications",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "c79vg6hcwsff",
+      "name": "Managed Soperator",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "r2shl4bly594",
+      "name": "Managed Soperator",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "6s29xvb9cm7r",
+      "name": "Managed Soperator",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "5vxm3bbsl81q",
+      "name": "Managed Soperator",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "b0vfx6x9jshp",
+      "name": "Managed Soperator",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "yvh66n4gt7zs",
+      "name": "Managed Soperator",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "sksh1j1y21b8",
+      "name": "Managed Soperator",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "wttkhpzt2wfh",
+      "name": "Managed Soperator",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "1kcs632ftvjf",
+      "name": "Managed Soperator",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "pl3t2gvs16mm",
+      "name": "Managed Service for SkyPilot",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "kc8cghbxk3kd",
+      "name": "Managed Service for SkyPilot",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "29fl9q56p0qt",
+      "name": "Managed Service for SkyPilot",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "j00b31rz6kdb",
+      "name": "Managed Service for SkyPilot",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "3c7p59fpv8q9",
+      "name": "Managed Service for SkyPilot",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "22tdw5q115g7",
+      "name": "Managed Service for SkyPilot",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "f0krfbhhjyxw",
+      "name": "Managed Service for SkyPilot",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "v94v27scyq3b",
+      "name": "Managed Service for SkyPilot",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "bmr997vfc00y",
+      "name": "Managed Service for SkyPilot",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    },
+    {
+      "id": "tlkpfv8qvt4h",
+      "name": "Serverless AI",
+      "status": "operational",
+      "group_id": "wjngyggymlwk",
+      "group": false
+    },
+    {
+      "id": "0ypq3nq3r3np",
+      "name": "Serverless AI",
+      "status": "operational",
+      "group_id": "w2rxct24kwdn",
+      "group": false
+    },
+    {
+      "id": "stn83p9bccry",
+      "name": "Serverless AI",
+      "status": "operational",
+      "group_id": "6j2c54r3kln5",
+      "group": false
+    },
+    {
+      "id": "q450prfn9grn",
+      "name": "Serverless AI",
+      "status": "operational",
+      "group_id": "g389s72ckww8",
+      "group": false
+    },
+    {
+      "id": "2dxrz9mv69rc",
+      "name": "Serverless AI",
+      "status": "operational",
+      "group_id": "nhlcp6mlc4pr",
+      "group": false
+    },
+    {
+      "id": "jsljqjtkq8q4",
+      "name": "Serverless AI",
+      "status": "operational",
+      "group_id": "ttmw60m8klxk",
+      "group": false
+    },
+    {
+      "id": "y6hwwrr6zfjv",
+      "name": "Serverless AI",
+      "status": "operational",
+      "group_id": "qfxmz47dyblv",
+      "group": false
+    },
+    {
+      "id": "k5f49mns3h8f",
+      "name": "Serverless AI",
+      "status": "operational",
+      "group_id": "xf42kxj03kgc",
+      "group": false
+    },
+    {
+      "id": "hvg9rnwf456j",
+      "name": "Serverless AI",
+      "status": "operational",
+      "group_id": "typjs8ttdqqz",
+      "group": false
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "data": {
+    "type": "status_page"
+  },
+  "included": [
+    {
+      "id": "199097",
+      "type": "status_page_section",
+      "attributes": {
+        "name": "Platform"
+      }
+    },
+    {
+      "id": "341945",
+      "type": "status_page_section",
+      "attributes": {
+        "name": "Sandbox"
+      }
+    },
+    {
+      "id": "340289",
+      "type": "status_page_section",
+      "attributes": {
+        "name": "LLM Inference"
+      }
+    },
+    {
+      "id": "8362143",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 199097,
+        "public_name": "API Gateway",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8362142",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 199097,
+        "public_name": "Website (novita.ai)",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8980518",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 340289,
+        "public_name": "Kimi K3",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8980517",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 340289,
+        "public_name": "Kimi K2.7 Code",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8980519",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 340289,
+        "public_name": "Hunyuan 3",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8980520",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 340289,
+        "public_name": "GLM 5.2",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8980521",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 340289,
+        "public_name": "MiniMax M3",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8980837",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 341945,
+        "public_name": "Sandbox Usage",
+        "status": "degraded"
+      }
+    }
+  ]
+}

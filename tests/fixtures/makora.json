@@ -1,0 +1,151 @@
+{
+  "components": [
+    {
+      "id": "g2zp1hg76f9d",
+      "name": "Makora Website",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    },
+    {
+      "id": "rvn516lrrtq4",
+      "name": "Qwen/Qwen3.8-Flash-Next",
+      "status": "operational",
+      "group_id": "n9m9rwpv4pd8",
+      "group": false
+    },
+    {
+      "id": "kldln6d364f7",
+      "name": "Makora Inference API",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    },
+    {
+      "id": "9z2dn155ngm8",
+      "name": "deepseek-ai/DeepSeek-V4-Flash",
+      "status": "operational",
+      "group_id": "n9m9rwpv4pd8",
+      "group": false
+    },
+    {
+      "id": "fl41ywqhtfc1",
+      "name": "Stripe JS",
+      "status": "operational",
+      "group_id": "gqlwt776hr5f",
+      "group": false
+    },
+    {
+      "id": "zftkn0pc9v6m",
+      "name": "google/gemma-4-26B-A4B",
+      "status": "operational",
+      "group_id": "n9m9rwpv4pd8",
+      "group": false
+    },
+    {
+      "id": "n9m9rwpv4pd8",
+      "name": "Models",
+      "status": "operational",
+      "group_id": null,
+      "group": true
+    },
+    {
+      "id": "4bgcqxz4vwts",
+      "name": "MakoraGenerate",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    },
+    {
+      "id": "s117ng564vp3",
+      "name": "Slack Connections",
+      "status": "operational",
+      "group_id": "gqlwt776hr5f",
+      "group": false
+    },
+    {
+      "id": "636zcppxlbr1",
+      "name": "moonshotai/Kimi-K3",
+      "status": "operational",
+      "group_id": "n9m9rwpv4pd8",
+      "group": false
+    },
+    {
+      "id": "pkh5rw9dwjbl",
+      "name": "MakoraOptimize",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    },
+    {
+      "id": "196sy6m1z605",
+      "name": "Stripe API",
+      "status": "operational",
+      "group_id": "gqlwt776hr5f",
+      "group": false
+    },
+    {
+      "id": "dk9znqm7dbrj",
+      "name": "zai-org/GLM-5.3",
+      "status": "operational",
+      "group_id": "n9m9rwpv4pd8",
+      "group": false
+    },
+    {
+      "id": "gqlwt776hr5f",
+      "name": "Third party",
+      "status": "operational",
+      "group_id": null,
+      "group": true
+    },
+    {
+      "id": "pfqlyfgdc3gx",
+      "name": "zai-org/GLM-5.3-Flash",
+      "status": "operational",
+      "group_id": "n9m9rwpv4pd8",
+      "group": false
+    },
+    {
+      "id": "kq29xwb9hrt5",
+      "name": "MakoraGenerate API",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    },
+    {
+      "id": "1w7njnhxn58q",
+      "name": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "status": "operational",
+      "group_id": "n9m9rwpv4pd8",
+      "group": false
+    },
+    {
+      "id": "mlsdgzjgg4d3",
+      "name": "MakoraOptimize API",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    },
+    {
+      "id": "k3jdkw4q189j",
+      "name": "XiaomiMiMo/MiMo-V2.6-Flash",
+      "status": "operational",
+      "group_id": "n9m9rwpv4pd8",
+      "group": false
+    },
+    {
+      "id": "h5bj1g4dqpk6",
+      "name": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+      "status": "operational",
+      "group_id": "n9m9rwpv4pd8",
+      "group": false
+    },
+    {
+      "id": "r63c34ynt6x5",
+      "name": "tencent/Hy4-preview",
+      "status": "operational",
+      "group_id": "n9m9rwpv4pd8",
+      "group": false
+    }
+  ]
+}

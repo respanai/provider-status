@@ -1,0 +1,136 @@
+{
+  "data": {
+    "type": "status_page"
+  },
+  "included": [
+    {
+      "id": "184104",
+      "type": "status_page_section",
+      "attributes": {
+        "name": "Backend Services"
+      }
+    },
+    {
+      "id": "184106",
+      "type": "status_page_section",
+      "attributes": {
+        "name": "Platforms"
+      }
+    },
+    {
+      "id": "301735",
+      "type": "status_page_section",
+      "attributes": {
+        "name": "Frontend Apps APIs"
+      }
+    },
+    {
+      "id": "8513076",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 184104,
+        "public_name": "IO Intelligence API",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8583176",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 184104,
+        "public_name": "IO Worker hiring & systems monitoring ",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8414334",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 184104,
+        "public_name": "IO Worker Core + POW \"ZKTFLOPs Proofs\"",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8414331",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 184104,
+        "public_name": "POTL",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8414332",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 184104,
+        "public_name": "IO Worker Auth API",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8414333",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 184104,
+        "public_name": "Payments API",
+        "status": "not_monitored"
+      }
+    },
+    {
+      "id": "8224661",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 184106,
+        "public_name": "io.net",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8224662",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 184106,
+        "public_name": "cloud.io.net",
+        "status": "not_monitored"
+      }
+    },
+    {
+      "id": "8414326",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 184106,
+        "public_name": "worker.io.net",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8414327",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 184106,
+        "public_name": "explorer.io.net",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8414328",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 184106,
+        "public_name": "docs.io.net",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8678277",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 301735,
+        "public_name": "Frontend Apps APIs",
+        "status": "operational"
+      }
+    }
+  ]
+}

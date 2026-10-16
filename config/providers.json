@@ -1,0 +1,563 @@
+{
+  "schema_version": 1,
+  "checked_date": "2026-10-16",
+  "scope": "52 registered external or legacy integrations; only configured current-state adapters produce known states. Provider-reported status, not Respan request success.",
+  "providers": [
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "status_url": "https://status.openai.com/",
+      "official_url": null,
+      "adapter": "incident_proxy",
+      "url": "https://status.openai.com/proxy/status.openai.com",
+      "group_pattern": "^APIs$",
+      "scope": "OpenAI APIs",
+      "verified_on": "2026-10-16",
+      "note": "Use API components; aggregate includes ChatGPT/Codex."
+    },
+    {
+      "id": "cohere",
+      "name": "Cohere",
+      "status_url": "https://status.cohere.com/",
+      "official_url": null,
+      "adapter": "statuspage",
+      "url": "https://status.cohere.com/api/v2/summary.json",
+      "all_components": true,
+      "exclude_pattern": "website|dashboard|console",
+      "scope": "Cohere endpoints and models",
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "ai21_labs",
+      "name": "AI21 Labs",
+      "status_url": "https://status.ai21.com/",
+      "official_url": null,
+      "adapter": "statuspage",
+      "url": "https://status.ai21.com/api/v2/summary.json",
+      "name_pattern": "^(Model Requests|jamba[- ]|Jamba Models)",
+      "scope": "AI21 model requests and Jamba models",
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "google_vertex_ai",
+      "name": "Google Vertex AI",
+      "status_url": "https://status.cloud.google.com/",
+      "official_url": null,
+      "adapter": "unavailable",
+      "history_url": "https://status.cloud.google.com/incidents.json",
+      "unavailable_reason": "Official incident history alone cannot establish current API status",
+      "note": "Filter relevant product and region; incident history does not directly establish a current green state."
+    },
+    {
+      "id": "google_gemini_ai",
+      "name": "Google Gemini AI",
+      "status_url": "https://aistudio.google.com/status",
+      "official_url": null,
+      "adapter": "unavailable",
+      "unavailable_reason": "Official status page found; no verified current API adapter or region mapping",
+      "note": "Gemini API/AI Studio source, separate from Vertex AI."
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "status_url": "https://status.claude.com/",
+      "official_url": null,
+      "adapter": "statuspage",
+      "url": "https://status.claude.com/api/v2/summary.json",
+      "names": [
+        "Claude API (api.anthropic.com)"
+      ],
+      "scope": "Claude API",
+      "verified_on": "2026-10-16",
+      "note": "Use Claude API component at api.anthropic.com."
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral",
+      "status_url": "https://status.mistral.ai/",
+      "official_url": null,
+      "adapter": "aggregate",
+      "url": "https://status.mistral.ai/api/v1/status.json",
+      "scope": "Mistral official service status (provider aggregate)",
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "azure_openai",
+      "name": "Azure OpenAI",
+      "status_url": "https://azure.status.microsoft/en-us/status",
+      "official_url": null,
+      "adapter": "unavailable",
+      "unavailable_reason": "Official status page found; no verified current API adapter or region mapping",
+      "note": "Public broad-impact incidents; personalized Azure Service Health is more complete."
+    },
+    {
+      "id": "azure_deepseek",
+      "name": "Azure DeepSeek",
+      "status_url": "https://azure.status.microsoft/en-us/status",
+      "official_url": null,
+      "adapter": "unavailable",
+      "unavailable_reason": "Official status page found; no verified current API adapter or region mapping",
+      "note": "Use Azure Foundry Models and deployment region, not direct DeepSeek status."
+    },
+    {
+      "id": "azure_foundry",
+      "name": "Azure Foundry",
+      "status_url": "https://azure.status.microsoft/en-us/status",
+      "official_url": null,
+      "adapter": "unavailable",
+      "unavailable_reason": "Official status page found; no verified current API adapter or region mapping",
+      "note": "Use Azure Foundry Models and deployment region; public page has limited scope."
+    },
+    {
+      "id": "openrouter",
+      "name": "OpenRouter",
+      "status_url": "https://status.openrouter.ai/",
+      "official_url": null,
+      "adapter": "datadog",
+      "url": "https://status.openrouter.ai/config.json",
+      "group_pattern": "^API\\b",
+      "scope": "OpenRouter API gateway",
+      "verified_on": "2026-10-16",
+      "note": "Gateway health does not establish health of all upstream providers."
+    },
+    {
+      "id": "groq",
+      "name": "Groq",
+      "status_url": "https://groqstatus.com/",
+      "official_url": null,
+      "adapter": "statuspage",
+      "url": "https://groqstatus.com/api/v2/summary.json",
+      "all_components": true,
+      "exclude_pattern": "^Website$",
+      "scope": "Groq API and model endpoints",
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "togetherai",
+      "name": "TogetherAI",
+      "status_url": "https://status.together.ai/",
+      "official_url": null,
+      "adapter": "betterstack",
+      "url": "https://status.together.ai/index.json",
+      "section_pattern": "^Inference\\b",
+      "scope": "Together inference models",
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "status_url": "https://status.perplexity.com/",
+      "official_url": null,
+      "adapter": "statuspage",
+      "url": "https://status.perplexity.com/api/v2/summary.json",
+      "names": [
+        "API"
+      ],
+      "scope": "Perplexity API",
+      "verified_on": "2026-10-16",
+      "note": "Select API component."
+    },
+    {
+      "id": "replicate",
+      "name": "Replicate",
+      "status_url": "https://www.replicatestatus.com/",
+      "official_url": null,
+      "adapter": "unavailable",
+      "unavailable_reason": "Official status page found; no verified current API adapter or region mapping"
+    },
+    {
+      "id": "fireworks",
+      "name": "Fireworks",
+      "status_url": "https://status.fireworks.ai/",
+      "official_url": null,
+      "adapter": "incident_proxy",
+      "url": "https://status.fireworks.ai/proxy/status.fireworks.ai",
+      "group_pattern": "^Serverless$",
+      "scope": "Fireworks Serverless models",
+      "verified_on": "2026-10-16",
+      "note": "Public page explicitly covers Serverless; dedicated inference scope not established."
+    },
+    {
+      "id": "deepinfra",
+      "name": "DeepInfra",
+      "status_url": "https://status.deepinfra.com/",
+      "official_url": null,
+      "adapter": "deepinfra",
+      "url": "https://status.deepinfra.com/api/v1/status",
+      "scope": "DeepInfra API service",
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "nebius",
+      "name": "Nebius",
+      "status_url": "https://status.nebius.com/",
+      "official_url": null,
+      "adapter": "statuspage",
+      "url": "https://status.nebius.com/api/v2/summary.json",
+      "name_pattern": "^(Serverless AI|Token Factory)$",
+      "scope": "Nebius inference across listed regions",
+      "verified_on": "2026-10-16",
+      "note": "Select relevant Serverless AI/Token Factory service and region."
+    },
+    {
+      "id": "cerebras",
+      "name": "Cerebras",
+      "status_url": "https://status.cerebras.ai/",
+      "official_url": null,
+      "adapter": "statuspage",
+      "url": "https://status.cerebras.ai/api/v2/summary.json",
+      "all_components": true,
+      "exclude_pattern": "console|website|dashboard",
+      "scope": "Cerebras inference models",
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "novita",
+      "name": "Novita",
+      "status_url": "https://status.novita.ai/",
+      "official_url": null,
+      "adapter": "betterstack",
+      "url": "https://status.novita.ai/index.json",
+      "section_pattern": "^LLM Inference$",
+      "names": [
+        "API Gateway"
+      ],
+      "scope": "Novita API Gateway and LLM Inference",
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "baseten",
+      "name": "Baseten",
+      "status_url": "https://status.baseten.co/",
+      "official_url": null,
+      "adapter": "statuspage",
+      "url": "https://status.baseten.co/api/v2/summary.json",
+      "names": [
+        "Model APIs"
+      ],
+      "scope": "Baseten Model APIs (dedicated inference excluded)",
+      "verified_on": "2026-10-16",
+      "note": "Model APIs and Dedicated Inference are separate components."
+    },
+    {
+      "id": "moonshot",
+      "name": "Moonshot",
+      "status_url": "https://status.moonshot.cn/",
+      "official_url": null,
+      "adapter": "statuspage",
+      "url": "https://status.moonshot.cn/api/v2/summary.json",
+      "names": [
+        "Open API"
+      ],
+      "scope": "Moonshot Open API (CN status source)",
+      "verified_on": "2026-10-16",
+      "note": "Select Open API; CN versus international applicability needs validation."
+    },
+    {
+      "id": "bedrock",
+      "name": "Bedrock",
+      "status_url": "https://health.aws.amazon.com/health/status",
+      "official_url": null,
+      "adapter": "unavailable",
+      "unavailable_reason": "Official status page found; no verified current API adapter or region mapping",
+      "note": "Filter Amazon Bedrock and deployed region; account-specific events require AWS Health account access."
+    },
+    {
+      "id": "inference_net",
+      "name": "Inference.net",
+      "status_url": "https://status.inference.net/",
+      "official_url": null,
+      "adapter": "statuspage",
+      "url": "https://status.inference.net/api/v2/summary.json",
+      "names": [
+        "API"
+      ],
+      "scope": "Inference.net API",
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "deepseek",
+      "name": "Deepseek",
+      "status_url": "https://status.deepseek.com/",
+      "official_url": null,
+      "adapter": "unavailable",
+      "history_url": "https://status.deepseek.com/feed.rss",
+      "unavailable_reason": "Official incident history alone cannot establish current API status"
+    },
+    {
+      "id": "xai",
+      "name": "xAI",
+      "status_url": "https://status.x.ai/",
+      "official_url": null,
+      "adapter": "unavailable",
+      "history_url": "https://status.x.ai/feed.xml",
+      "unavailable_reason": "Official incident history alone cannot establish current API status"
+    },
+    {
+      "id": "parasail",
+      "name": "Parasail",
+      "status_url": "https://status.parasail.io/",
+      "official_url": null,
+      "adapter": "unavailable",
+      "unavailable_reason": "Official status page found; no verified current API adapter or region mapping"
+    },
+    {
+      "id": "featherless",
+      "name": "Featherless",
+      "status_url": "https://featherless.ai/status",
+      "official_url": null,
+      "adapter": "unavailable",
+      "unavailable_reason": "Official status page found; no verified current API adapter or region mapping"
+    },
+    {
+      "id": "chutes",
+      "name": "Chutes",
+      "status_url": "https://status.chutes.ai/",
+      "official_url": null,
+      "adapter": "betterstack",
+      "url": "https://status.chutes.ai/index.json",
+      "names": [
+        "API Heartbeat"
+      ],
+      "scope": "Chutes API Heartbeat",
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "friendliai",
+      "name": "FriendliAI",
+      "status_url": "https://status.friendli.ai/",
+      "official_url": null,
+      "adapter": "instatus",
+      "url": "https://status.friendli.ai/v3/components.json",
+      "group_pattern": "^Model APIs$",
+      "scope": "FriendliAI Model APIs",
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "morphllm",
+      "name": "MorphLLM",
+      "status_url": "https://status.morphllm.com/",
+      "official_url": null,
+      "adapter": "statuspage",
+      "url": "https://status.morphllm.com/api/v2/summary.json",
+      "all_components": true,
+      "exclude_pattern": "^(Website|App)$",
+      "scope": "Morph model and inference APIs",
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "minimax",
+      "name": "MiniMax",
+      "status_url": "https://status.minimax.io/",
+      "official_url": null,
+      "adapter": "statuspage",
+      "url": "https://status.minimax.io/api/v2/summary.json",
+      "names": [
+        "Large Language Models (LLM)"
+      ],
+      "scope": "MiniMax LLM API",
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "ionet",
+      "name": "IO.net",
+      "status_url": "https://status.io.net/",
+      "official_url": null,
+      "adapter": "betterstack",
+      "url": "https://status.io.net/index.json",
+      "names": [
+        "IO Intelligence API"
+      ],
+      "scope": "IO Intelligence API",
+      "verified_on": "2026-10-16",
+      "note": "Select IO Intelligence API; broader network and worker status are separate."
+    },
+    {
+      "id": "makora",
+      "name": "Makora",
+      "status_url": "https://status.makora.com/",
+      "official_url": null,
+      "adapter": "statuspage",
+      "url": "https://status.makora.com/api/v2/summary.json",
+      "group_pattern": "^Models$",
+      "name_pattern": "^Makora Inference API$",
+      "scope": "Makora Inference API and models",
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "relace",
+      "name": "Relace",
+      "status_url": "https://status.relace.ai/",
+      "official_url": null,
+      "adapter": "betterstack",
+      "url": "https://status.relace.ai/index.json",
+      "section_pattern": "^(Relace Models|Open Models)$",
+      "scope": "Relace inference models",
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "typesafe",
+      "name": "TypeSafe",
+      "status_url": "https://status.typesafe.ai/",
+      "official_url": null,
+      "adapter": "betterstack",
+      "url": "https://status.typesafe.ai/index.json",
+      "names": [
+        "api.typesafe.ai"
+      ],
+      "name_pattern": "^api\\.[\\w.-]*typesafe\\.ai$",
+      "scope": "TypeSafe API endpoints across listed regions",
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "isoquant",
+      "name": "Isoquant",
+      "status_url": "https://isoquant.ai/status",
+      "official_url": null,
+      "adapter": "statuspage",
+      "url": "https://statuspage.incident.io/isoquant/api/v2/summary.json",
+      "names": [
+        "API"
+      ],
+      "scope": "Isoquant API",
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "prism",
+      "name": "Prism",
+      "status_url": "https://status.prisminference.com/",
+      "official_url": null,
+      "adapter": "statuspage",
+      "url": "https://status.prisminference.com/api/v2/summary.json",
+      "all_components": true,
+      "scope": "Prism inference models",
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "empiriolabs",
+      "name": "EmpirioLabs",
+      "status_url": "https://status.empiriolabs.ai/",
+      "official_url": null,
+      "adapter": "unavailable",
+      "history_url": "https://status.empiriolabs.ai/feed.xml",
+      "unavailable_reason": "Official incident history alone cannot establish current API status"
+    },
+    {
+      "id": "qwen",
+      "name": "Qwen",
+      "status_url": "https://status.alibabacloud.com/",
+      "official_url": null,
+      "adapter": "unavailable",
+      "unavailable_reason": "Official status page found; no verified current API adapter or region mapping",
+      "note": "Broad Alibaba Cloud health. Match actual Model Studio/DashScope endpoint and region; Model Studio coverage not independently confirmed."
+    },
+    {
+      "id": "google_palm",
+      "name": "Google Palm",
+      "status_url": null,
+      "official_url": null,
+      "adapter": "unavailable",
+      "unavailable_reason": "No official public status resource verified",
+      "note": "Legacy registry entry; no current dedicated status verified."
+    },
+    {
+      "id": "concentrate",
+      "name": "Concentrate",
+      "status_url": null,
+      "official_url": "https://concentrate.ai/",
+      "adapter": "unavailable",
+      "unavailable_reason": "No official public status resource verified",
+      "note": "No official public status resource verified."
+    },
+    {
+      "id": "nextbit256",
+      "name": "Nextbit256",
+      "status_url": null,
+      "official_url": "https://www.nextbit256.com/",
+      "adapter": "unavailable",
+      "unavailable_reason": "No official public status resource verified",
+      "note": "Homepage has running/uptime text but no documented machine-readable incident/status feed verified."
+    },
+    {
+      "id": "tera",
+      "name": "Tera",
+      "status_url": null,
+      "official_url": "https://www.tera.gw/inference",
+      "adapter": "unavailable",
+      "unavailable_reason": "No official public status resource verified",
+      "note": "No official public status resource verified."
+    },
+    {
+      "id": "wafer",
+      "name": "Wafer",
+      "status_url": null,
+      "official_url": "https://www.wafer.ai/",
+      "adapter": "unavailable",
+      "unavailable_reason": "No official public status resource verified",
+      "note": "No official public status resource verified."
+    },
+    {
+      "id": "inceptron",
+      "name": "Inceptron",
+      "status_url": null,
+      "official_url": "https://docs.inceptron.io/",
+      "adapter": "unavailable",
+      "unavailable_reason": "No official public status resource verified",
+      "note": "No official public status resource verified."
+    },
+    {
+      "id": "gonka24",
+      "name": "Gonka24",
+      "status_url": null,
+      "official_url": "https://gonka24.com/",
+      "adapter": "unavailable",
+      "unavailable_reason": "No official public status resource verified",
+      "note": "No official public status resource verified."
+    },
+    {
+      "id": "mangoboost",
+      "name": "MangoBoost",
+      "status_url": null,
+      "official_url": "https://inference.mangoboost.io/",
+      "adapter": "unavailable",
+      "unavailable_reason": "No official public status resource verified",
+      "note": "No official public status resource verified."
+    },
+    {
+      "id": "paretoinference",
+      "name": "Pareto Inference",
+      "status_url": null,
+      "official_url": "https://docs.paretoinference.com/",
+      "adapter": "unavailable",
+      "unavailable_reason": "No official public status resource verified",
+      "note": "No official public status resource verified."
+    },
+    {
+      "id": "runanywhere",
+      "name": "RunAnywhere",
+      "status_url": null,
+      "official_url": "https://docs.runanywhere.ai/",
+      "adapter": "unavailable",
+      "unavailable_reason": "No official public status resource verified",
+      "note": "No official public status resource verified."
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "status_url": null,
+      "official_url": "https://dev.meta.ai/docs/protocols/chat-completions",
+      "adapter": "unavailable",
+      "unavailable_reason": "No official public status resource verified",
+      "note": "Meta Model API at api.meta.ai, not old Llama API or Meta business products."
+    },
+    {
+      "id": "zai",
+      "name": "Z.ai",
+      "status_url": null,
+      "official_url": "https://docs.z.ai/",
+      "adapter": "unavailable",
+      "unavailable_reason": "No official public status resource verified",
+      "note": "No official public status resource verified."
+    }
+  ]
+}

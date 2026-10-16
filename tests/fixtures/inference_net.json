@@ -1,0 +1,14 @@
+{
+  "components": [
+    {
+      "id": "01M21SKD7H58DNYDNCXCPCG3GV",
+      "name": "API",
+      "status": "operational"
+    },
+    {
+      "id": "01M21SKD7H59YNVDDY3SRBBDJJ",
+      "name": "Website",
+      "status": "operational"
+    }
+  ]
+}

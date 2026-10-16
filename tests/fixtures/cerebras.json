@@ -1,0 +1,25 @@
+{
+  "components": [
+    {
+      "id": "hgfykfsb36gn",
+      "name": "GPT-OSS-120B",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    },
+    {
+      "id": "83h1cchw4vs4",
+      "name": "Developer Console",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    },
+    {
+      "id": "s9j1yrfjvn64",
+      "name": "Qwen-3.8-27b",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    }
+  ]
+}

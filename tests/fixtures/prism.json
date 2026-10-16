@@ -1,0 +1,14 @@
+{
+  "components": [
+    {
+      "id": "01M47JMVABS2B5ESWFTPVWA45H",
+      "name": "DeepSeek V4.1 Flash",
+      "status": "operational"
+    },
+    {
+      "id": "01M47JMVABFRS75BCD3WQYNQSJ",
+      "name": "Gemma 4 31B",
+      "status": "operational"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-16T10:00:08.955Z",
+  "isStale": false,
+  "services": [
+    {
+      "publicId": "api",
+      "displayName": "API",
+      "hostname": "api.deepinfra.com",
+      "status": "OPERATIONAL",
+      "lastStatusChangeAt": "2026-07-31T22:07:42.919Z",
+      "checksFailingNow": false
+    },
+    {
+      "publicId": "website",
+      "displayName": "Website",
+      "hostname": "deepinfra.com",
+      "status": "OPERATIONAL",
+      "lastStatusChangeAt": "2026-08-19T04:28:50.913Z",
+      "checksFailingNow": false
+    }
+  ]
+}

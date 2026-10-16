@@ -1,0 +1,82 @@
+{
+  "data": {
+    "type": "status_page"
+  },
+  "included": [
+    {
+      "id": "308219",
+      "type": "status_page_section",
+      "attributes": {
+        "name": "Current status by service"
+      }
+    },
+    {
+      "id": "356815",
+      "type": "status_page_section",
+      "attributes": {
+        "name": "API status by geography"
+      }
+    },
+    {
+      "id": "356735",
+      "type": "status_page_section",
+      "attributes": {
+        "name": "API status by region"
+      }
+    },
+    {
+      "id": "8735312",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 308219,
+        "public_name": "api.typesafe.ai",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "8741362",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 308219,
+        "public_name": "console.typesafe.ai",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "9029224",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 356735,
+        "public_name": "api.us-east-1.typesafe.ai",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "9029127",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 356735,
+        "public_name": "api.us-east-2.typesafe.ai",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "9026188",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 356735,
+        "public_name": "api.us-west-2.typesafe.ai",
+        "status": "operational"
+      }
+    },
+    {
+      "id": "9026390",
+      "type": "status_page_resource",
+      "attributes": {
+        "status_page_section_id": 356815,
+        "public_name": "api.us.typesafe.ai",
+        "status": "operational"
+      }
+    }
+  ]
+}

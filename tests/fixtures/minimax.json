@@ -1,0 +1,25 @@
+{
+  "components": [
+    {
+      "id": "pr0d8qr59svt",
+      "name": "Large Language Models (LLM)",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    },
+    {
+      "id": "jqd3xqhk9v7j",
+      "name": "Text-to-Speech",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    },
+    {
+      "id": "zvwy77wxk251",
+      "name": "Video Generation",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    }
+  ]
+}

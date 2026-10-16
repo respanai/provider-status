@@ -1,0 +1,58 @@
+name: Sync official provider status
+
+"on":
+  schedule:
+    - cron: "3-58/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: provider-status-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.event.repository.private == false && github.event.repository.fork == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out reviewed collector
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Check out public sync state
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: state
+          path: sync-state
+          persist-credentials: false
+      - name: Validate integration configuration
+        env:
+          BETTERSTACK_API_TOKEN: ${{ secrets.BETTERSTACK_API_TOKEN }}
+          BETTERSTACK_STATUS_PAGE_ID: ${{ vars.BETTERSTACK_STATUS_PAGE_ID }}
+        run: |
+          python3 - <<'PY'
+          import os
+          if not os.environ.get('BETTERSTACK_API_TOKEN'):
+              raise SystemExit('Configure the BETTERSTACK_API_TOKEN Actions secret.')
+          page = os.environ.get('BETTERSTACK_STATUS_PAGE_ID', '')
+          if not page.isdigit():
+              raise SystemExit('Configure the numeric BETTERSTACK_STATUS_PAGE_ID Actions variable.')
+          PY
+      - name: Test feed parsing and synchronization
+        run: python3 -m unittest discover -s tests -v
+      - name: Read official provider feeds
+        run: python3 providers.py --output observations.json
+      - name: Synchronize native Better Stack rows
+        id: synchronize
+        env:
+          BETTERSTACK_API_TOKEN: ${{ secrets.BETTERSTACK_API_TOKEN }}
+          BETTERSTACK_STATUS_PAGE_ID: ${{ vars.BETTERSTACK_STATUS_PAGE_ID }}
+        run: python3 betterstack.py --input observations.json --state sync-state/state.json --page-id "$BETTERSTACK_STATUS_PAGE_ID" --apply
+      - name: Preserve reconciliation state
+        if: always() && (steps.synchronize.outcome == 'success' || steps.synchronize.outcome == 'failure')
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 persist_state.py --state sync-state/state.json

@@ -1,0 +1,137 @@
+{
+  "components": [
+    {
+      "id": "01l1n50g13g6",
+      "name": "Kimi",
+      "status": "operational",
+      "group_id": null,
+      "group": true
+    },
+    {
+      "id": "sttxgsd2bps7",
+      "name": "Website",
+      "status": "operational",
+      "group_id": "01l1n50g13g6",
+      "group": false
+    },
+    {
+      "id": "8psr5dfdld0s",
+      "name": "Open API",
+      "status": "operational",
+      "group_id": "87jpctq5cp71",
+      "group": false
+    },
+    {
+      "id": "rf64wcbxt3r2",
+      "name": "API Service",
+      "status": "operational",
+      "group_id": "01l1n50g13g6",
+      "group": false
+    },
+    {
+      "id": "pjrph68g94yr",
+      "name": "Open Platform Portal",
+      "status": "operational",
+      "group_id": "87jpctq5cp71",
+      "group": false
+    },
+    {
+      "id": "cyrtlddz0q8c",
+      "name": "Kimi Code",
+      "status": "operational",
+      "group_id": null,
+      "group": true
+    },
+    {
+      "id": "1l34rxbvx0gt",
+      "name": "K3",
+      "status": "operational",
+      "group_id": "cyrtlddz0q8c",
+      "group": false
+    },
+    {
+      "id": "87jpctq5cp71",
+      "name": "SaaS",
+      "status": "operational",
+      "group_id": null,
+      "group": true
+    },
+    {
+      "id": "ckrtmmv96r2z",
+      "name": "Sign In / Sign Up",
+      "status": "operational",
+      "group_id": "01l1n50g13g6",
+      "group": false
+    },
+    {
+      "id": "bs3h7057mc6g",
+      "name": "K2.8 Preview",
+      "status": "operational",
+      "group_id": "cyrtlddz0q8c",
+      "group": false
+    },
+    {
+      "id": "x3z9ydzr6ywk",
+      "name": "File uploads",
+      "status": "operational",
+      "group_id": "01l1n50g13g6",
+      "group": false
+    },
+    {
+      "id": "qrqn4ss6d252",
+      "name": "K2.7 Code Highspeed",
+      "status": "operational",
+      "group_id": "cyrtlddz0q8c",
+      "group": false
+    },
+    {
+      "id": "smbb3z35s0jl",
+      "name": "Search",
+      "status": "operational",
+      "group_id": "01l1n50g13g6",
+      "group": false
+    },
+    {
+      "id": "x0zsqgy57b75",
+      "name": "Model",
+      "status": "operational",
+      "group_id": "01l1n50g13g6",
+      "group": false
+    },
+    {
+      "id": "8rkd3yj051gl",
+      "name": "Vision Model",
+      "status": "operational",
+      "group_id": "01l1n50g13g6",
+      "group": false
+    },
+    {
+      "id": "lk7q3z0fcylp",
+      "name": "Thinking Model",
+      "status": "operational",
+      "group_id": "01l1n50g13g6",
+      "group": false
+    },
+    {
+      "id": "p1j9ttb7jwhp",
+      "name": "Text Model",
+      "status": "operational",
+      "group_id": "01l1n50g13g6",
+      "group": false
+    },
+    {
+      "id": "wmn9wzv84k1v",
+      "name": "Research Model",
+      "status": "operational",
+      "group_id": "01l1n50g13g6",
+      "group": false
+    },
+    {
+      "id": "z2zfp65lvb2z",
+      "name": "K2 Model",
+      "status": "operational",
+      "group_id": "01l1n50g13g6",
+      "group": false
+    }
+  ]
+}

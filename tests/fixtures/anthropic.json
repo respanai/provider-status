@@ -1,0 +1,46 @@
+{
+  "components": [
+    {
+      "id": "rwppv331jlwc",
+      "name": "claude.ai",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    },
+    {
+      "id": "0qbwn08sd68x",
+      "name": "Claude Console (platform.claude.com)",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    },
+    {
+      "id": "k8w3r06qmzrp",
+      "name": "Claude API (api.anthropic.com)",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    },
+    {
+      "id": "yyzkbfz2thpt",
+      "name": "Claude Code",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    },
+    {
+      "id": "bpp5gb3hpjcl",
+      "name": "Claude Cowork",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    },
+    {
+      "id": "0scnb50nvy53",
+      "name": "Claude for Government",
+      "status": "operational",
+      "group_id": null,
+      "group": false
+    }
+  ]
+}

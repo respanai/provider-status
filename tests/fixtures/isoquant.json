@@ -1,0 +1,14 @@
+{
+  "components": [
+    {
+      "id": "01M3R5PEYHBBZH7BBMHGHEBQC1",
+      "name": "Console",
+      "status": "operational"
+    },
+    {
+      "id": "01M3R5PEYH70P2WXBNP41VJT0T",
+      "name": "API",
+      "status": "operational"
+    }
+  ]
+}
