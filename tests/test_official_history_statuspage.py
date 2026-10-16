@@ -1,8 +1,14 @@
 from datetime import datetime, timedelta, timezone
+import json
+from pathlib import Path
+import tempfile
+import urllib.error
 import unittest
+from unittest.mock import MagicMock, patch
 
 from official_history_statuspage import (
-    extract_provider, native_history_url, parse_component_impacts, parse_showcase, stamp, window,
+    extract_provider, fetch_public, native_history_url, parse_component_impacts,
+    parse_positive_incident_days, parse_showcase, save_archive, stamp, window,
 )
 
 
@@ -46,8 +52,9 @@ class OfficialHistoryStatuspageTests(unittest.TestCase):
         self.assertEqual(history[3]["source_url"], URL)
 
     def test_missing_component_or_day_never_establishes_complete_scope_coverage(self):
-        with self.assertRaisesRegex(ValueError, "no published uptime timeline"):
-            parse_showcase(showcase(), ["api", "new-model"], NOW, URL)
+        history = parse_showcase(showcase(), ["api", "new-model"], NOW, URL)
+        self.assertEqual(len(history), 90)
+        self.assertTrue(all(day["state"] == "unknown" for day in history))
         payload = showcase()
         del payload["timelines"]["api"]["days"][7]
         self.assertEqual(len(parse_showcase(payload, ["api"], NOW, URL)), 89)
@@ -55,9 +62,25 @@ class OfficialHistoryStatuspageTests(unittest.TestCase):
     def test_empty_incidents_without_explicit_native_component_coverage_cannot_backfill_green(self):
         with self.assertRaisesRegex(ValueError, "coverage contract"):
             parse_component_impacts({"component_impacts": []}, ["api"], NOW, URL)
-        with self.assertRaisesRegex(ValueError, "lacks explicit history coverage"):
-            parse_component_impacts(native(), ["api", "website"], NOW, URL)
+        partial = parse_component_impacts(native(), ["api", "website"], NOW, URL)
+        self.assertTrue(all(day["state"] == "unknown" for day in partial))
         self.assertEqual(len(parse_component_impacts(native(), ["api"], NOW, URL)), 90)
+
+    def test_missing_model_history_preserves_known_gateway_issues_without_healthy_days(self):
+        payload = showcase()
+        payload["timelines"]["api"]["days"][3]["outages"] = {"m": 307}
+        history = parse_showcase(payload, ["api", "missing-model"], NOW, URL)
+        self.assertEqual(history[3]["state"], "degraded")
+        self.assertEqual(history[2]["state"], "unknown")
+        self.assertNotIn("operational", [day["state"] for day in history])
+
+    def test_native_known_issues_survive_missing_component_coverage(self):
+        payload = native()
+        payload["component_impacts"] = [{"component_id": "api", "start_at": "2026-10-15T03:00:00Z",
+                                         "end_at": "2026-10-15T03:10:00Z", "status": "major_outage"}]
+        history = parse_component_impacts(payload, ["api", "missing-model"], NOW, URL)
+        self.assertEqual(next(day for day in history if day["date"] == "2026-10-15")["state"], "degraded")
+        self.assertEqual(history[0]["state"], "unknown")
 
     def test_partial_native_first_day_and_future_time_are_not_treated_as_complete_days(self):
         history = parse_component_impacts(native("2026-10-01T03:28:26Z"), ["api"], NOW, URL)
@@ -113,6 +136,42 @@ class OfficialHistoryStatuspageTests(unittest.TestCase):
         self.assertIn("/component_impacts?", url)
         self.assertIn("start_at=2026-07-19T00%3A00%3A00Z", url)
         self.assertIn("end_at=2026-10-17T00%3A00%3A00Z", url)
+
+    def test_replicate_incidents_require_exact_component_and_never_green_other_days(self):
+        payload = {"incidents": [
+            {"id": "other", "impact": "critical", "components": [{"id": "dns"}], "started_at": "2026-10-13T00:00:00Z"},
+            {"id": "replicate", "impact": "major", "components": [{"id": "replicate"}],
+             "started_at": "2026-10-14T23:55:00Z", "resolved_at": None,
+             "incident_updates": [{"created_at": "2026-10-15T00:10:00Z",
+                                   "affected_components": [{"code": "replicate", "new_status": "partial_outage"}]}]},
+        ]}
+        history = parse_positive_incident_days(payload, ["replicate"], NOW, URL)
+        self.assertEqual([day["date"] for day in history], ["2026-10-14", "2026-10-15"])
+        self.assertTrue(all(day["state"] == "degraded" for day in history))
+        self.assertEqual(parse_positive_incident_days({"incidents": []}, ["replicate"], NOW, URL), [])
+
+    def test_empty_followup_failure_does_not_overwrite_reachable_archive_records(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "archive.json"
+            prior = {"schema_version": 1, "providers": {"api": {"id": "api", "history": [{"date": "2026-10-15", "state": "degraded"}]}}}
+            path.write_text(json.dumps(prior))
+            followup = {"schema_version": 1, "providers": {"api": {"id": "api", "history": [], "reason": "HTTP503", "captured_at": NOW.isoformat()}}}
+            save_archive(followup, path)
+            result = json.loads(path.read_text())["providers"]["api"]
+            self.assertEqual(result["history"], prior["providers"]["api"]["history"])
+            self.assertEqual(result["last_attempt"]["error"], "HTTP503")
+
+    def test_only_public_get_transient_errors_are_retried(self):
+        response = MagicMock()
+        response.__enter__.return_value.read.return_value = b'{"ok":true}'
+        with patch("official_history_statuspage.urllib.request.urlopen", side_effect=[urllib.error.URLError("temporary TLS EOF"), response]) as request, patch("official_history_statuspage.time_module.sleep"):
+            self.assertEqual(fetch_public("https://status.example.com/"), {"ok": True})
+            self.assertEqual(request.call_count, 2)
+        error = urllib.error.HTTPError(URL, 404, "Not found", {}, None)
+        with patch("official_history_statuspage.urllib.request.urlopen", side_effect=error) as request:
+            with self.assertRaises(urllib.error.HTTPError):
+                fetch_public(URL)
+            self.assertEqual(request.call_count, 1)
 
 
 if __name__ == "__main__":

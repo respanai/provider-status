@@ -146,10 +146,11 @@ components, and incomplete windows stay unknown or absent. Rounded aggregate
 uptime and empty incident feeds cannot fill daily records. Source outages do
 not change the current-status collector's behavior.
 
-The landing page only lists providers whose merged published and collected
-records cover all 90 displayed dates with known states. Archived Respan records
-retain their separate provenance. Providers with incomplete history are excluded
-until their record supports the full window.
+The landing page lists every provider with a verified official live-status feed,
+regardless of historical coverage. It displays the reachable published and
+collected records within its 90-day window; missing dates remain gray. Archived
+Respan records retain their separate provenance. A shorter or unavailable history
+must never hide an otherwise eligible provider.
 
 ### Collector checks
 
