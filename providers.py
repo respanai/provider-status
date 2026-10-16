@@ -26,6 +26,7 @@ STATES = {
     "partial_outage": "degraded", "minor": "degraded", "minoroutage": "degraded",
     "degradedperformance": "degraded", "hasissues": "degraded",
     "down": "downtime", "downtime": "downtime", "major_outage": "downtime",
+    "full_outage": "downtime",
     "major": "downtime", "critical": "downtime", "majoroutage": "downtime",
     "under_maintenance": "maintenance", "maintenance": "maintenance",
 }
@@ -224,9 +225,68 @@ def _aggregate(data, row):
     return state, row["scope"] + ": " + str(data["status"].get("description", state))
 
 
+def _empiriolabs(data, row):
+    if not isinstance(data, dict) or not isinstance(data.get("sites"), list):
+        raise SourceError("Missing EmpirioLabs current service states")
+    now = datetime.now(timezone.utc)
+    timestamps = [data.get("generatedAt")]
+    selected = _selected(data["sites"], row)
+    timestamps.extend(x.get("lastUpdated") for x in selected)
+    for value in timestamps:
+        stamp = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+        if stamp.tzinfo is None or not -120 <= (now - stamp).total_seconds() <= 900:
+            raise SourceError("EmpirioLabs status snapshot is stale or untimed")
+    return _rollup(selected, row["scope"])
+
+
+def _flashduty(data, row):
+    """Flashduty's public current active-summary API, used by DeepSeek's page.
+
+    The official frontend derives each component's current state from this
+    explicit active list. History feeds and cached SSR fallback data are unused.
+    """
+    summary = data.get("data") if isinstance(data, dict) else None
+    if not isinstance(summary, dict) or not isinstance(summary.get("active_changes"), list):
+        raise SourceError("Missing Flashduty current active-summary contract")
+    page = summary.get("page")
+    if not isinstance(page, dict) or str(page.get("page_id")) != str(row.get("page_id")):
+        raise SourceError("Unexpected Flashduty status page identity")
+    if page.get("custom_domain") != urllib.parse.urlparse(row["status_url"]).hostname:
+        raise SourceError("Unexpected Flashduty status page domain")
+    components = page.get("components")
+    if not isinstance(components, list):
+        raise SourceError("Missing Flashduty current components")
+    selected = _selected([{"id": x.get("component_id"), "name": x.get("name"),
+                           "status": "operational"} for x in components], row)
+    by_id = {x["id"]: x for x in selected}
+    for change in summary["active_changes"]:
+        if not isinstance(change, dict) or not isinstance(change.get("status"), str):
+            raise SourceError("Invalid Flashduty active change")
+        if change["status"] in {"resolved", "completed"}:
+            continue
+        if change.get("type") == "maintenance" and change["status"] == "scheduled":
+            continue
+        affected = change.get("affected_components")
+        if not isinstance(affected, list) or not affected:
+            raise SourceError("Active status change has no explicit affected components")
+        for item in affected:
+            if not isinstance(item, dict) or not item.get("component_id") or not item.get("status"):
+                raise SourceError("Invalid Flashduty current component impact")
+            if item["component_id"] in by_id:
+                # Keep one current component entry; a second active incident
+                # affecting the same component may increase its severity.
+                existing = by_id[item["component_id"]]
+                rank = {"operational": 0, "unknown": 1, "maintenance": 2,
+                        "degraded": 3, "downtime": 4}
+                if rank[state_of(item["status"])] > rank[state_of(existing["status"])]:
+                    existing["status"] = item["status"]
+    return _rollup(selected, row["scope"])
+
+
 ADAPTERS = {"statuspage": _statuspage, "instatus": _statuspage,
             "incident_proxy": _incident_proxy, "betterstack": _betterstack,
-            "datadog": _datadog, "deepinfra": _deepinfra, "aggregate": _aggregate}
+            "datadog": _datadog, "deepinfra": _deepinfra, "aggregate": _aggregate,
+            "empiriolabs": _empiriolabs, "flashduty": _flashduty}
 
 
 def parse_source(data, row) -> tuple[str, str]:

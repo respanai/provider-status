@@ -1,0 +1,18 @@
+{
+  "components": [
+    {
+      "id": "fvgfcmy66tdr",
+      "name": "Replicate",
+      "status": "operational",
+      "group_id": "1km35smx8p41",
+      "group": false
+    },
+    {
+      "id": "57srcl8zcn7c",
+      "name": "Workers",
+      "status": "operational",
+      "group_id": "1km35smx8p41",
+      "group": false
+    }
+  ]
+}

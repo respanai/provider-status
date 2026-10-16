@@ -162,8 +162,14 @@
       "name": "Replicate",
       "status_url": "https://www.replicatestatus.com/",
       "official_url": null,
-      "adapter": "unavailable",
-      "unavailable_reason": "Official status page found; no verified current API adapter or region mapping"
+      "adapter": "statuspage",
+      "url": "https://www.cloudflarestatus.com/api/v2/summary.json",
+      "names": [
+        "Replicate"
+      ],
+      "scope": "Replicate service (official Cloudflare status component)",
+      "verified_on": "2026-10-16",
+      "note": "Official Replicate status URL redirects to Cloudflare services; select Replicate only."
     },
     {
       "id": "fireworks",
@@ -280,9 +286,14 @@
       "name": "Deepseek",
       "status_url": "https://status.deepseek.com/",
       "official_url": null,
-      "adapter": "unavailable",
+      "adapter": "flashduty",
       "history_url": "https://status.deepseek.com/feed.rss",
-      "unavailable_reason": "Official incident history alone cannot establish current API status"
+      "url": "https://status.deepseek.com/api/status-page/6410630422455/summary/active",
+      "page_id": "6410630422455",
+      "name_pattern": "API\u670d\u52a1|API Service",
+      "scope": "DeepSeek API model services",
+      "verified_on": "2026-10-16",
+      "note": "Current active-summary route verified in official Flashduty frontend. Chat, uploads and search excluded."
     },
     {
       "id": "xai",
@@ -291,7 +302,8 @@
       "official_url": null,
       "adapter": "unavailable",
       "history_url": "https://status.x.ai/feed.xml",
-      "unavailable_reason": "Official incident history alone cannot establish current API status"
+      "unavailable_reason": "Official current status JSON returned HTTP 403; RSS alone cannot establish current API status",
+      "note": "Current JSON was unavailable without passing the provider access check; no bypass attempted."
     },
     {
       "id": "parasail",
@@ -307,7 +319,9 @@
       "status_url": "https://featherless.ai/status",
       "official_url": null,
       "adapter": "unavailable",
-      "unavailable_reason": "Official status page found; no verified current API adapter or region mapping"
+      "unavailable_reason": "Official status exposes hourly model-class error counts; no authoritative current state verified",
+      "history_url": "https://api.featherless.ai/feather/status/error-rates",
+      "note": "Official frontend publishes hourly error-count series. Counts or absent errors are not an authoritative operational state."
     },
     {
       "id": "chutes",
@@ -438,9 +452,15 @@
       "name": "EmpirioLabs",
       "status_url": "https://status.empiriolabs.ai/",
       "official_url": null,
-      "adapter": "unavailable",
+      "adapter": "empiriolabs",
       "history_url": "https://status.empiriolabs.ai/feed.xml",
-      "unavailable_reason": "Official incident history alone cannot establish current API status"
+      "url": "https://status.empiriolabs.ai/summary.json",
+      "names": [
+        "API Gateway",
+        "Models"
+      ],
+      "scope": "EmpirioLabs API Gateway and Models",
+      "verified_on": "2026-10-16"
     },
     {
       "id": "qwen",

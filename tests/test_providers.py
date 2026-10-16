@@ -32,6 +32,10 @@ class ProviderStatusTests(unittest.TestCase):
                 data = fixture(name)
                 if id == "deepinfra":
                     data["generatedAt"] = providers.utc_now()
+                if id == "empiriolabs":
+                    data["generatedAt"] = providers.utc_now()
+                    for site in data["sites"]:
+                        site["lastUpdated"] = providers.utc_now()
                 state, detail = providers.parse_source(data, row)
                 self.assertIn(state, {"operational", "degraded", "downtime", "maintenance", "unknown"})
                 self.assertNotIn("not found", detail)
@@ -140,14 +144,63 @@ class ProviderStatusTests(unittest.TestCase):
     def test_history_only_never_fetches_or_infers_current_green(self):
         def unexpected_fetch(*args, **kwargs):
             self.fail("History-only provider must not be treated as current status")
-        result = providers.collect_provider(CONFIG["deepseek"], fetcher=unexpected_fetch)
+        result = providers.collect_provider(CONFIG["xai"], fetcher=unexpected_fetch)
         self.assertEqual(result["state"], "unknown")
-        self.assertIn("history", result["detail"])
+        self.assertIn("RSS", result["detail"])
 
     def test_normalized_output_has_timezone_aware_observation(self):
         result = collect("minimax", fixture("minimax"))
         self.assertEqual(set(result), {"id", "name", "state", "observed_at", "source_url", "detail"})
         self.assertIsNotNone(datetime.fromisoformat(result["observed_at"]).tzinfo)
+
+    def test_empiriolabs_scopes_gateway_models_and_requires_fresh_observations(self):
+        data = fixture("empiriolabs")
+        data["generatedAt"] = providers.utc_now()
+        for site in data["sites"]:
+            site["lastUpdated"] = providers.utc_now()
+            if site["name"] == "Website":
+                site["status"] = "down"
+        self.assertEqual(collect("empiriolabs", data)["state"], "operational")
+        api = next(s for s in data["sites"] if s["name"] == "API Gateway")
+        api["status"] = "down"
+        self.assertEqual(collect("empiriolabs", data)["state"], "degraded")
+        api["status"] = "up"
+        api["lastUpdated"] = (datetime.now(timezone.utc) - timedelta(hours=1)).isoformat()
+        self.assertEqual(collect("empiriolabs", data)["state"], "unknown")
+
+    def test_replicate_ignores_other_cloudflare_services(self):
+        data = fixture("replicate")
+        data["components"].append({"id": "unrelated", "name": "Cloudflare DNS", "status": "major_outage"})
+        self.assertEqual(collect("replicate", data)["state"], "operational")
+        data["components"] = [x for x in data["components"] if x["name"] != "Replicate"]
+        self.assertEqual(collect("replicate", data)["state"], "unknown")
+
+    def test_deepseek_uses_explicit_current_contract_and_excludes_chat(self):
+        data = fixture("deepseek")
+        self.assertEqual(collect("deepseek", data)["state"], "operational")
+        components = data["data"]["page"]["components"]
+        chat = next(x for x in components if "Chatservice" in x["name"])
+        data["data"]["active_changes"] = [{"status": "investigating", "type": "incident",
+            "affected_components": [{"component_id": chat["component_id"], "status": "full_outage"}]}]
+        self.assertEqual(collect("deepseek", data)["state"], "operational")
+        apis = [x for x in components if "API Service" in x["name"]]
+        data["data"]["active_changes"][0]["affected_components"] = [
+            {"component_id": apis[0]["component_id"], "status": "full_outage"}]
+        self.assertEqual(collect("deepseek", data)["state"], "degraded")
+        data["data"]["active_changes"][0]["affected_components"].append(
+            {"component_id": apis[1]["component_id"], "status": "full_outage"})
+        self.assertEqual(collect("deepseek", data)["state"], "downtime")
+
+    def test_deepseek_missing_or_malformed_current_contract_is_unknown(self):
+        data = fixture("deepseek")
+        del data["data"]["active_changes"]
+        self.assertEqual(collect("deepseek", data)["state"], "unknown")
+        data = fixture("deepseek")
+        data["data"]["active_changes"] = [{"status": "investigating"}]
+        self.assertEqual(collect("deepseek", data)["state"], "unknown")
+        data = fixture("deepseek")
+        data["data"]["page"]["custom_domain"] = "other.example"
+        self.assertEqual(collect("deepseek", data)["state"], "unknown")
 
 
 if __name__ == "__main__":
