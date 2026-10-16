@@ -4,13 +4,13 @@
   "providers": {
     "ai21_labs": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:12Z",
+      "last_success_at": "2026-10-16T11:09:31Z",
       "resource_id": "9030904",
       "source_url": "https://status.ai21.com/"
     },
     "anthropic": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:12Z",
+      "last_success_at": "2026-10-16T11:09:31Z",
       "resource_id": "9030905",
       "source_url": "https://status.claude.com/"
     },
@@ -19,52 +19,52 @@
     "azure_openai": {},
     "baseten": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:12Z",
+      "last_success_at": "2026-10-16T11:09:32Z",
       "resource_id": "9030916",
       "source_url": "https://status.baseten.co/"
     },
     "bedrock": {},
     "cerebras": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:12Z",
+      "last_success_at": "2026-10-16T11:09:31Z",
       "resource_id": "9030914",
       "source_url": "https://status.cerebras.ai/"
     },
     "chutes": {},
     "cohere": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:12Z",
+      "last_success_at": "2026-10-16T11:09:31Z",
       "resource_id": "9030903",
       "source_url": "https://status.cohere.com/"
     },
     "deepinfra": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:12Z",
+      "last_success_at": "2026-10-16T11:09:31Z",
       "resource_id": "9030912",
       "source_url": "https://status.deepinfra.com/"
     },
     "deepseek": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:13Z",
+      "last_success_at": "2026-10-16T11:09:32Z",
       "resource_id": "9030933",
       "source_url": "https://status.deepseek.com/"
     },
     "empiriolabs": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:13Z",
+      "last_success_at": "2026-10-16T11:09:32Z",
       "resource_id": "9030934",
       "source_url": "https://status.empiriolabs.ai/"
     },
     "featherless": {},
     "fireworks": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:12Z",
+      "last_success_at": "2026-10-16T11:09:31Z",
       "resource_id": "9030911",
       "source_url": "https://status.fireworks.ai/"
     },
     "friendliai": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:13Z",
+      "last_success_at": "2026-10-16T11:09:32Z",
       "resource_id": "9030919",
       "source_url": "https://status.friendli.ai/"
     },
@@ -72,117 +72,117 @@
     "google_vertex_ai": {},
     "groq": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:12Z",
+      "last_success_at": "2026-10-16T11:09:31Z",
       "resource_id": "9030908",
       "source_url": "https://groqstatus.com/"
     },
     "inference_net": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:13Z",
+      "last_success_at": "2026-10-16T11:09:32Z",
       "resource_id": "9030918",
       "source_url": "https://status.inference.net/"
     },
     "ionet": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:13Z",
+      "last_success_at": "2026-10-16T11:09:32Z",
       "resource_id": "9030922",
       "source_url": "https://status.io.net/"
     },
     "isoquant": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:13Z",
+      "last_success_at": "2026-10-16T11:09:32Z",
       "resource_id": "9030926",
       "source_url": "https://isoquant.ai/status"
     },
     "makora": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:14Z",
+      "last_success_at": "2026-10-16T11:09:32Z",
       "resource_id": "9030923",
       "source_url": "https://status.makora.com/"
     },
     "minimax": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:13Z",
+      "last_success_at": "2026-10-16T11:09:32Z",
       "resource_id": "9030921",
       "source_url": "https://status.minimax.io/"
     },
     "mistral": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:12Z",
+      "last_success_at": "2026-10-16T11:09:31Z",
       "resource_id": "9030906",
       "source_url": "https://status.mistral.ai/"
     },
     "moonshot": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:13Z",
+      "last_success_at": "2026-10-16T11:09:31Z",
       "resource_id": "9030917",
       "source_url": "https://status.moonshot.cn/"
     },
     "morphllm": {
       "last_state": "degraded",
-      "last_success_at": "2026-10-16T10:55:13Z",
+      "last_success_at": "2026-10-16T11:09:32Z",
       "report_id": "1091995",
       "resource_id": "9030920",
       "source_url": "https://status.morphllm.com/"
     },
     "nebius": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:12Z",
+      "last_success_at": "2026-10-16T11:09:31Z",
       "resource_id": "9030913",
       "source_url": "https://status.nebius.com/"
     },
     "novita": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:13Z",
+      "last_success_at": "2026-10-16T11:09:32Z",
       "resource_id": "9030915",
       "source_url": "https://status.novita.ai/"
     },
     "openai": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:12Z",
+      "last_success_at": "2026-10-16T11:09:31Z",
       "resource_id": "9030902",
       "source_url": "https://status.openai.com/"
     },
     "openrouter": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:12Z",
+      "last_success_at": "2026-10-16T11:09:31Z",
       "resource_id": "9030907",
       "source_url": "https://status.openrouter.ai/"
     },
     "parasail": {},
     "perplexity": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:12Z",
+      "last_success_at": "2026-10-16T11:09:31Z",
       "resource_id": "9030910",
       "source_url": "https://status.perplexity.com/"
     },
     "prism": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:13Z",
+      "last_success_at": "2026-10-16T11:09:32Z",
       "resource_id": "9030927",
       "source_url": "https://status.prisminference.com/"
     },
     "relace": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:14Z",
+      "last_success_at": "2026-10-16T11:09:33Z",
       "resource_id": "9030924",
       "source_url": "https://status.relace.ai/"
     },
     "replicate": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:12Z",
+      "last_success_at": "2026-10-16T11:09:31Z",
       "resource_id": "9030932",
       "source_url": "https://www.replicatestatus.com/"
     },
     "togetherai": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:13Z",
+      "last_success_at": "2026-10-16T11:09:32Z",
       "resource_id": "9030909",
       "source_url": "https://status.together.ai/"
     },
     "typesafe": {
       "last_state": "operational",
-      "last_success_at": "2026-10-16T10:55:13Z",
+      "last_success_at": "2026-10-16T11:09:33Z",
       "resource_id": "9030925",
       "source_url": "https://status.typesafe.ai/"
     },
