@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 from urllib.parse import urlparse
 
-from providers import DEFAULT_CONFIG, load_config
+from providers import ADAPTERS, DEFAULT_CONFIG, load_config
 
 
 KNOWN_STATES = {"operational", "degraded", "downtime", "maintenance"}
@@ -35,13 +35,38 @@ def iso(value):
     return value.astimezone(timezone.utc).isoformat(timespec="seconds")
 
 
-def public_url(row, observation):
-    value = (row.get("status_url") or observation.get("source_url")
-             or row.get("official_url") or row.get("url"))
-    parsed = urlparse(value or "")
-    if parsed.scheme != "https" or not parsed.hostname or parsed.username:
+def public_url(value):
+    """Validate a reviewed public source; never substitute a provider homepage."""
+    if not isinstance(value, str):
+        return None
+    try:
+        parsed = urlparse(value or "")
+        valid = parsed.scheme == "https" and parsed.hostname and not parsed.username and not parsed.password
+    except ValueError:
+        return None
+    if not valid:
         return None
     return value
+
+
+def publishable_provider(row, now):
+    """Only reviewed official current-state feeds belong in the public snapshot.
+
+    Eligibility is configured evidence, independent of a transient observation.
+    A third-party status host is allowed when the reviewed official status page
+    delegates to it; a homepage URL alone is never evidence of a status source.
+    """
+    if (row.get("adapter") not in ADAPTERS
+            or not public_url(row.get("status_url"))
+            or not public_url(row.get("url"))
+            or not isinstance(row.get("scope"), str) or not row["scope"].strip()):
+        return False
+    verified = row.get("verified_on")
+    try:
+        verified_date = date.fromisoformat(verified)
+    except (TypeError, ValueError):
+        return False
+    return str(verified_date) == verified and verified_date <= now.date()
 
 
 def history_for(prior, observation, observed, now):
@@ -111,14 +136,12 @@ def build_snapshot(config, observations, previous=None, now=None, stale_after_se
                    if isinstance(row, dict) and isinstance(row.get("id"), str)}
     providers = []
     for row in rows:
+        if not publishable_provider(row, now):
+            continue
         prior = prior_by_id.get(row["id"], {})
         observation = observations_by_id.get(row["id"], {})
         state = observation.get("state", "unknown")
         detail = observation.get("detail") or row.get("unavailable_reason") or "No observation was produced"
-        if row.get("adapter") == "unavailable":
-            state = "unknown"
-            detail = row.get("unavailable_reason") or detail
-            observation = {**observation, "state": "unknown"}
         observed = timestamp(observation.get("observed_at"))
         valid_time = observed and observed <= now + timedelta(seconds=120)
         if state not in OBSERVED_STATES:
@@ -137,10 +160,10 @@ def build_snapshot(config, observations, previous=None, now=None, stale_after_se
             state = "stale"
         providers.append({
             "id": row["id"], "name": row["name"], "state": state,
-            "enabled": row.get("adapter") != "unavailable",
+            "enabled": True,
             "observed_at": iso(observed) if valid_time else None,
             "expires_at": iso(expires) if expires else None,
-            "source_url": public_url(row, observation), "detail": str(detail)[:400],
+            "source_url": public_url(row["status_url"]), "detail": str(detail)[:400],
             "last_confirmed_state": last_confirmed_state,
             "last_confirmed_at": iso(last_confirmed) if last_confirmed else None,
             "history": history_for(prior, observation, observed if valid_time else None, now),

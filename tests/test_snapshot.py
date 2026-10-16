@@ -1,12 +1,15 @@
 from datetime import datetime, timedelta, timezone
 import unittest
 
-from snapshot import build_snapshot, effective_state, iso
+from providers import load_config
+from snapshot import build_snapshot, effective_state, iso, publishable_provider
 
 
 NOW = datetime(2026, 10, 16, 12, 0, tzinfo=timezone.utc)
 CONFIG = [{"id": "api", "name": "Example API", "adapter": "statuspage",
-           "status_url": "https://status.example.com/"},
+           "status_url": "https://status.example.com/",
+           "url": "https://status.example.com/api/v2/summary.json",
+           "scope": "Example API", "verified_on": "2026-10-16"},
           {"id": "unsupported", "name": "Unsupported", "adapter": "unavailable",
            "official_url": "https://example.org/", "unavailable_reason": "No current source"}]
 
@@ -64,13 +67,65 @@ class PublicSnapshotTests(unittest.TestCase):
                 self.assertEqual(row["history"], [])
                 self.assertIsNone(row["last_confirmed_at"])
 
-    def test_missing_observation_and_disabled_source_are_explicit_unknown(self):
+    def test_missing_observation_stays_unknown_and_disabled_source_is_not_published(self):
         snapshot = build([])
-        self.assertEqual(len(snapshot["providers"]), 2)
-        for row in snapshot["providers"]:
-            self.assertEqual(row["state"], "unknown")
-            self.assertEqual(row["history"], [])
-        self.assertFalse(snapshot["providers"][1]["enabled"])
+        self.assertEqual(len(snapshot["providers"]), 1)
+        row = snapshot["providers"][0]
+        self.assertEqual(row["state"], "unknown")
+        self.assertEqual(row["history"], [])
+        self.assertTrue(row["enabled"])
+
+    def test_publication_requires_official_status_page_current_adapter_and_reviewed_scope(self):
+        invalid = [
+            {"status_url": None, "official_url": "https://example.com/"},
+            {"status_url": "http://status.example.com/"},
+            {"status_url": "https://token@status.example.com/"},
+            {"status_url": "https://[invalid/status"},
+            {"url": None}, {"url": "http://status.example.com/api.json"},
+            {"adapter": "unavailable"}, {"adapter": "invented-adapter"},
+            {"verified_on": None}, {"verified_on": "invalid"},
+            {"verified_on": "2026-10-17"}, {"scope": ""},
+        ]
+        for changes in invalid:
+            with self.subTest(changes=changes):
+                row = {**CONFIG[0], **changes}
+                self.assertFalse(publishable_provider(row, NOW))
+                # Even an operational observation cannot make an unverified row eligible.
+                result = build_snapshot([row], [observation()], now=NOW)
+                self.assertEqual(result["providers"], [])
+
+    def test_previous_snapshot_cannot_reintroduce_removed_or_unverified_entries(self):
+        previous = build()
+        previous["providers"].extend([
+            {"id": "unsupported", "state": "operational", "history": [
+                {"date": "2026-10-15", "state": "operational", "uptime": 100}]},
+            {"id": "removed", "state": "operational", "history": []},
+        ])
+        observations = [observation(), {**observation(), "id": "unsupported"}]
+        result = build(observations, previous)
+        self.assertEqual([row["id"] for row in result["providers"]], ["api"])
+
+    def test_eligible_fetch_failure_keeps_row_and_never_substitutes_a_homepage(self):
+        obs = {**observation("unknown"), "source_url": "https://example.com/",
+               "detail": "Official status source timed out"}
+        result = build_snapshot([{**CONFIG[0], "official_url": "https://example.com/"}],
+                                [obs], previous=build(), now=NOW)
+        row = result["providers"][0]
+        self.assertEqual(row["state"], "unknown")
+        self.assertTrue(row["enabled"])
+        self.assertEqual(row["source_url"], CONFIG[0]["status_url"])
+        self.assertEqual(row["last_confirmed_state"], "operational")
+
+    def test_current_inventory_publishes_exactly_29_verified_official_live_feeds(self):
+        config = load_config()
+        self.assertEqual(len(config), 52)
+        expected = {row["id"] for row in config if publishable_provider(row, NOW)}
+        self.assertEqual(len(expected), 29)
+        observations = [{**observation("unknown"), "id": row["id"]} for row in config]
+        result = build_snapshot(config, observations, now=NOW)
+        self.assertEqual({row["id"] for row in result["providers"]}, expected)
+        self.assertTrue(all(row["state"] == "unknown" for row in result["providers"]))
+        self.assertTrue(all(row["enabled"] for row in result["providers"]))
 
     def test_history_has_only_observed_utc_days_and_no_uptime_percentages(self):
         first = build([observation(observed=NOW - timedelta(days=2))])

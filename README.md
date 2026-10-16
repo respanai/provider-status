@@ -26,7 +26,20 @@ After the first publication, the landing page can fetch without credentials:
 <https://raw.githubusercontent.com/respanai/provider-status/state/public-status.json>
 
 The snapshot has `schema_version: 1`, `generated_at`, `expires_at`,
-`stale_after_seconds: 900`, and a `providers` array. Each provider contains:
+`stale_after_seconds: 900`, and a `providers` array.
+
+Publication includes only verified official live feeds: a reviewed public HTTPS
+`status_url`, a supported current-state adapter with a public HTTPS endpoint,
+a valid `verified_on` review date, and an explicit reviewed service `scope`.
+The current 52-provider inventory contains 29 eligible feeds. Official websites
+without a usable current feed and providers with no verified official status
+resource stay in the audit inventory but are omitted from this public snapshot,
+including any entries previously published. A temporary fetch or parsing failure
+keeps an eligible provider in the snapshot as `unknown`. Its source link always
+remains the configured official status page; a company homepage is never used
+as a replacement status source.
+
+Each provider contains:
 
 ```json
 {
@@ -45,12 +58,13 @@ The snapshot has `schema_version: 1`, `generated_at`, `expires_at`,
 ```
 
 Known states are `operational`, `degraded`, `downtime` and `maintenance`. A failed
-or unsupported source is `unknown`. An already expired known observation is
+eligible source is `unknown`; unsupported sources are not published. An already
+expired known observation is
 `stale`. The consumer must also compare its current time with both provider and
 snapshot `expires_at`: a known badge becomes stale when either expires, even if
 the scheduled collector stops. Unknown remains unknown. Last-confirmed fields
 provide context and must never replace an unknown or stale badge with green.
-`enabled: false` identifies an expected coverage gap.
+Every published provider has `enabled: true`, even during a temporary source failure.
 
 History contains the worst status observed on each UTC day in the last 90 calendar
 days. Unobserved days remain absent, and every `uptime` is null. Unknown observations
@@ -151,9 +165,10 @@ python3 betterstack.py --input observations.json --state state.json --page-id 17
   observations only. Separate reconciliation state may include Better Stack
   resource/report IDs. Credentials and request headers must never appear in either.
 
-The source registry retains unsupported providers so gaps are explicit. A provider
-with an official status website may still need a current-state adapter; a published
-incident RSS feed alone is insufficient.
+The source registry retains unsupported providers for internal coverage review;
+they are not part of the public status snapshot. A provider with an official
+status website may still need a current-state adapter; a published incident RSS
+feed alone is insufficient for publication.
 
 ## Operational recovery
 
