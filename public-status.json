@@ -1,11 +1,11 @@
 {
-  "expires_at": "2026-11-02T00:10:50+00:00",
-  "generated_at": "2026-11-01T23:55:50+00:00",
+  "expires_at": "2026-11-02T00:37:37+00:00",
+  "generated_at": "2026-11-02T00:22:37+00:00",
   "providers": [
     {
       "detail": "OpenAI APIs: 14 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -91,20 +91,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "openai",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "OpenAI",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.openai.com/",
       "state": "operational"
     },
     {
       "detail": "Cohere Endpoints and Models: 28 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -190,20 +195,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "cohere",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "Cohere",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.cohere.com/",
       "state": "operational"
     },
     {
       "detail": "AI21 model requests and Jamba models: 4 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:35+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -289,20 +299,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "ai21_labs",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:35+00:00",
       "last_confirmed_state": "operational",
       "name": "AI21 Labs",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:35+00:00",
       "source_url": "https://status.ai21.com/",
       "state": "operational"
     },
     {
       "detail": "Claude API: 1 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:35+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -388,20 +403,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "anthropic",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:35+00:00",
       "last_confirmed_state": "operational",
       "name": "Anthropic",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:35+00:00",
       "source_url": "https://status.claude.com/",
       "state": "operational"
     },
     {
       "detail": "Mistral official service status (provider aggregate): All Systems Operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -487,20 +507,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "mistral",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "Mistral",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.mistral.ai/",
       "state": "operational"
     },
     {
       "detail": "OpenRouter API gateway: 6 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:35+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -586,20 +611,25 @@
           "date": "2026-11-01",
           "state": "unknown",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "openrouter",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:35+00:00",
       "last_confirmed_state": "operational",
       "name": "OpenRouter",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:35+00:00",
       "source_url": "https://status.openrouter.ai/",
       "state": "operational"
     },
     {
       "detail": "Groq API and model endpoints: 14 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -685,20 +715,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "groq",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "Groq",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://groqstatus.com/",
       "state": "operational"
     },
     {
       "detail": "Together inference models: 20 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -784,20 +819,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "togetherai",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "TogetherAI",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.together.ai/",
       "state": "operational"
     },
     {
       "detail": "Perplexity API: 1 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -883,20 +923,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "perplexity",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "Perplexity",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.perplexity.com/",
       "state": "operational"
     },
     {
       "detail": "Replicate service (official Cloudflare status component): 1 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -982,20 +1027,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "replicate",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "Replicate",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://www.replicatestatus.com/",
       "state": "operational"
     },
     {
       "detail": "Fireworks Serverless models: 22 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -1081,20 +1131,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "fireworks",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "Fireworks",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.fireworks.ai/",
       "state": "operational"
     },
     {
       "detail": "DeepInfra API service: 1 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -1180,20 +1235,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "deepinfra",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "DeepInfra",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.deepinfra.com/",
       "state": "operational"
     },
     {
       "detail": "Nebius inference across listed regions: 18 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -1279,20 +1339,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "nebius",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "Nebius",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.nebius.com/",
       "state": "operational"
     },
     {
       "detail": "Cerebras inference models: 2 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -1378,20 +1443,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "cerebras",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "Cerebras",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.cerebras.ai/",
       "state": "operational"
     },
     {
       "detail": "Novita API Gateway and LLM Inference: 6 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -1477,20 +1547,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "novita",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "Novita",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.novita.ai/",
       "state": "operational"
     },
     {
       "detail": "Baseten Model APIs (dedicated inference excluded): 1 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -1576,20 +1651,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "baseten",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "Baseten",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.baseten.co/",
       "state": "operational"
     },
     {
       "detail": "Moonshot Open API (CN status source): 1 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -1675,20 +1755,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "moonshot",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "Moonshot",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.moonshot.cn/",
       "state": "operational"
     },
     {
       "detail": "Inference.net API: 1 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -1774,20 +1859,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "inference_net",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "Inference.net",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.inference.net/",
       "state": "operational"
     },
     {
       "detail": "DeepSeek API model services: 4 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:50+00:00",
+      "expires_at": "2026-11-02T00:37:37+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -1873,20 +1963,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "deepseek",
-      "last_confirmed_at": "2026-11-01T23:55:50+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:37+00:00",
       "last_confirmed_state": "operational",
       "name": "Deepseek",
-      "observed_at": "2026-11-01T23:55:50+00:00",
+      "observed_at": "2026-11-02T00:22:37+00:00",
       "source_url": "https://status.deepseek.com/",
       "state": "operational"
     },
     {
       "detail": "Configured API components were not found",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -1970,6 +2065,11 @@
         },
         {
           "date": "2026-11-01",
+          "state": "unknown",
+          "uptime": null
+        },
+        {
+          "date": "2026-11-02",
           "state": "unknown",
           "uptime": null
         }
@@ -1978,14 +2078,14 @@
       "last_confirmed_at": "2026-10-31T20:11:24+00:00",
       "last_confirmed_state": "operational",
       "name": "FriendliAI",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.friendli.ai/",
       "state": "unknown"
     },
     {
       "detail": "Morph model and inference APIs: Fast Apply (degraded performance)",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -2071,20 +2171,25 @@
           "date": "2026-11-01",
           "state": "degraded",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "degraded",
+          "uptime": null
         }
       ],
       "id": "morphllm",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "degraded",
       "name": "MorphLLM",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.morphllm.com/",
       "state": "degraded"
     },
     {
       "detail": "MiniMax LLM API: 1 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:49+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -2170,20 +2275,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "minimax",
-      "last_confirmed_at": "2026-11-01T23:55:49+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "MiniMax",
-      "observed_at": "2026-11-01T23:55:49+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.minimax.io/",
       "state": "operational"
     },
     {
       "detail": "IO Intelligence API: 1 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:50+00:00",
+      "expires_at": "2026-11-02T00:37:37+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -2269,20 +2379,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "ionet",
-      "last_confirmed_at": "2026-11-01T23:55:50+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:37+00:00",
       "last_confirmed_state": "operational",
       "name": "IO.net",
-      "observed_at": "2026-11-01T23:55:50+00:00",
+      "observed_at": "2026-11-02T00:22:37+00:00",
       "source_url": "https://status.io.net/",
       "state": "operational"
     },
     {
       "detail": "Makora Inference API and models: 14 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:50+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -2368,20 +2483,25 @@
           "date": "2026-11-01",
           "state": "degraded",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "makora",
-      "last_confirmed_at": "2026-11-01T23:55:50+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "Makora",
-      "observed_at": "2026-11-01T23:55:50+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.makora.com/",
       "state": "operational"
     },
     {
       "detail": "Relace inference models: 12 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:50+00:00",
+      "expires_at": "2026-11-02T00:37:37+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -2467,20 +2587,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "relace",
-      "last_confirmed_at": "2026-11-01T23:55:50+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:37+00:00",
       "last_confirmed_state": "operational",
       "name": "Relace",
-      "observed_at": "2026-11-01T23:55:50+00:00",
+      "observed_at": "2026-11-02T00:22:37+00:00",
       "source_url": "https://status.relace.ai/",
       "state": "operational"
     },
     {
       "detail": "TypeSafe API endpoints across listed regions: 5 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:50+00:00",
+      "expires_at": "2026-11-02T00:37:37+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -2566,20 +2691,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "typesafe",
-      "last_confirmed_at": "2026-11-01T23:55:50+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:37+00:00",
       "last_confirmed_state": "operational",
       "name": "TypeSafe",
-      "observed_at": "2026-11-01T23:55:50+00:00",
+      "observed_at": "2026-11-02T00:22:37+00:00",
       "source_url": "https://status.typesafe.ai/",
       "state": "operational"
     },
     {
       "detail": "Isoquant API: 1 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:50+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -2665,20 +2795,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "isoquant",
-      "last_confirmed_at": "2026-11-01T23:55:50+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "Isoquant",
-      "observed_at": "2026-11-01T23:55:50+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://isoquant.ai/status",
       "state": "operational"
     },
     {
       "detail": "Prism inference models: 2 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:50+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -2764,20 +2899,25 @@
           "date": "2026-11-01",
           "state": "operational",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "prism",
-      "last_confirmed_at": "2026-11-01T23:55:50+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "Prism",
-      "observed_at": "2026-11-01T23:55:50+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.prisminference.com/",
       "state": "operational"
     },
     {
       "detail": "EmpirioLabs API Gateway and Models: 2 component(s) operational",
       "enabled": true,
-      "expires_at": "2026-11-02T00:10:50+00:00",
+      "expires_at": "2026-11-02T00:37:36+00:00",
       "history": [
         {
           "date": "2026-10-16",
@@ -2863,13 +3003,18 @@
           "date": "2026-11-01",
           "state": "unknown",
           "uptime": null
+        },
+        {
+          "date": "2026-11-02",
+          "state": "operational",
+          "uptime": null
         }
       ],
       "id": "empiriolabs",
-      "last_confirmed_at": "2026-11-01T23:55:50+00:00",
+      "last_confirmed_at": "2026-11-02T00:22:36+00:00",
       "last_confirmed_state": "operational",
       "name": "EmpirioLabs",
-      "observed_at": "2026-11-01T23:55:50+00:00",
+      "observed_at": "2026-11-02T00:22:36+00:00",
       "source_url": "https://status.empiriolabs.ai/",
       "state": "operational"
     }
